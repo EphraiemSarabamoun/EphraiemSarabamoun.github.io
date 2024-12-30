@@ -1,1 +1,1 @@
-
+The styling and organization of this website draws heavily from source code obtained from Samuel Schmidgall's repo: https://github.com/SamuelSchmidgall/SamuelSchmidgall.github.io (Which in turn uses source code from https://jonbarron.info/). Feel free to clone this code for your own personal use.

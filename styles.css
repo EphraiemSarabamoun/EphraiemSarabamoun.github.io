@@ -79,7 +79,8 @@ td,
 th,
 tr,
 p,
-a {
+a,
+li {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 14px;
 }
@@ -132,4 +133,52 @@ h2 {
 
 span.highlight {
   background-color: #ffffd0;
+}
+
+.blog-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.blog-title {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.blog-meta {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.blog-content {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+}
+.blog-image {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+  border-radius: 8px;
+  }
+
+a {
+  color: #1772d0;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f09228;
+}
+
+.back-link {
+  display: block;
+  margin-top: 20px;
+  font-size: 14px;
 }

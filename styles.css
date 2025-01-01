@@ -82,7 +82,7 @@ p,
 a,
 li {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 strong {
@@ -92,18 +92,18 @@ strong {
 
 h2 {
   margin: 0;
-  font-weight: normal;
+  font-weight: bold;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
   font-size: 22px;
 }
 
-.papertitle {
+.blogtitle {
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
 }
 
-.name {
+.title {
   padding-top: 20px;
   margin: 0;
   font-family: 'Lato', Verdana, Helvetica, sans-serif;
@@ -148,6 +148,7 @@ span.highlight {
   font-size: 28px;
   color: #333;
   margin-bottom: 10px;
+  font-family: 'Lato', Verdana, Helvetica, sans-serif;
 }
 
 .blog-meta {

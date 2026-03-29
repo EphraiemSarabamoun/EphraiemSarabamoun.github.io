@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Safety Manual</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+        <div class="blog-container">
+            <a href="../writings.html" class="back-link">&larr; Back to Writings</a>
+            <h1 class="blog-title">AI Safety Manual</h1>
+            <p class="blog-meta">Posted originally on <time datetime="2026-03-29">March 29, 2026</time> by Ephraiem Sarabamoun</p>
+            <img src="../images/blog13img1.png" alt="Overview of the AI Safety Field" class="blog-image">
+            <div class="blog-content">
+                <p>This is meant to be an introductory guide to anyone interested in the field of AI Safety. I want to give to you a general layout of this subject (part 1) and end with some practical steps that you can take if you wish to enter the field (part 2). I wish I had such a guide when I started out and hopefully this will help you save some time on your own journey. I want to mention that I am still very much a novice in this space (and so would gratefully appreciate any correction or critique). I believe though that being a beginner myself might assist me in being more useful to others who are also getting started since the info I'll provide is fresh in my mind and up to date.</p>
+
+                <h2>PART 1: Survey of Technical AI Safety</h2>
+
+                <h3>AI Preferences</h3>
+                <p>If you have played with a coding agent before like Claude Code or Codex, you'll notice that it makes many decisions for you to accomplish what you ask it. For example, if you say, "Build me the UI for a weather app". The agent will execute on this, and, in early 2026, it'll produce something quite impressive for you. To achieve this, the agent had to make hundreds of decisions along the way. What color will the landing page be, what font type and size will it use, what programming language/framework will it use, etc.</p>
+                <p>Now let us discuss the agent's actions using the language of "preferences". If the agent makes the background of the landing page beige, then we say that, in this context, the agent "prefers" a beige background for the landing page.</p>
+                <p>Now keep in mind, that up to this point, the preferences here are only defined within the context of this particular action of the agent, i.e. if you were to ask the same model again with a similar prompt, it might very well "prefer" a different color for the landing page. What you'll notice though dealing with a coding agent is that it has persistent preferences which points to a persistent overarching persona (much like for people).</p>
+                <p>Dealing with Claude often for example, I certainly feel the model has a style of doing things. The conclusion is that the training process that is being used to create these systems (the combo of the model and the scaffolding to turn the model into an agent) are producing coherent personas with stable, predictable preferences. In a way this is not totally surprising, companies are deliberately trying to train a coherent persona and use techniques that are liable to produce the kind of generalizations which lead to stable preferences. The problem is, we do not have a complete understanding about how exactly models develop their preferences. We know that it's partially because of pretraining (next-token prediction on training data), partially because of different post training techniques that are applied to the model during training. Partially due to tweaking the system prompt of the model and the scaffolding of the agent. Out of all these inputs we get out this stable persona and it's impossible to say what came from where. It is also therefore difficult to know what to change to get the preferences that you want out of the model. It's a trial-and-error process. You make a model using all these different techniques, but you cannot guarantee ahead of time what kind of preferences this model will have given its training. You have to test it, find areas where it's not behaving as you'd like and then tweak the training to bring the model's behavior in line with what you want.</p>
+                <p>This fundamental lack of understanding of exactly how preferences are produced in models along with the speed at which models are increasing in capabilities is why AI Safety research is so urgently needed right now.</p>
+
+                <h3>Overview of the Field of AI Safety</h3>
+                <p>Based on everything that I have learned so far about this field, here is my take on the general layout of this field at present.</p>
+                <p>The x-axis represents the goal that you are trying to accomplish. AI Alignment is trying to build good preferences into the AI and avoid building bad preferences (for example "scheming" … I will discuss this in more detail later). AI Control on the other hand assumes a misaligned AI and tries to implement strategies to catch and control such an AI if it tries to misbehave. The y-axis represents the action that you are taking. Intervention is making changes to the model/agent flow and has the goal of making the AI system more controllable or more aligned. Monitoring is a parallel process or environment that you can put in place to catch and test for possible Alignment or Control problems. Now it is useful to consider these two axes in turn.</p>
+
+                <h3>The Monitoring/Intervention Axis and Notes on Monitoring</h3>
+                <p>For the Monitoring/Intervention axis, these two directions are related. Interventions build upon monitoring … ie. Your monitor tells you that there is a problem, the intervention method then figures out how to intervene in the system to address this issue, then monitoring tells you if you succeeded in your intervention. Building good monitors is generally complicated by limitations in our understanding of model internals, ie how activations encode preferences/information is very rudimentary. Monitoring techniques are generally classified into two buckets, "white box" methods, monitors that look at what is happening inside the model (ie. the model's activations) to try and catch when it is being bad, and "black box" methods, monitors that consider the model a black box and evaluate only the inputs/outputs of the model including the chain of reasoning of the model and the token outputs. White box methods have historically gotten a lot of attention, these techniques rely on a field called "Mechanistic Interpretability" that tries to understand exactly how Neural Networks work (what layers do what, where are facts stored in the network). Currently though there has been a bit of a backlash against such techniques in the field. Many of the seminal papers that introduced "breakthroughs" in this area are being challenged and there is a consensus now that neural networks are far messier and more complicated than previously thought, and that white box methods are generally ineffective except in rare cases and even then, should be paired with other black-box techniques.</p>
+                <p>Luckily, "black box" methods are quite effective mainly because models are honest/simple enough to transparently telegraph most of what they are doing. Most "black box methods" are very simple and straightforward. For example, one such "technique" is Chain of thought monitoring, which pretty much means read the chain of thought of the model and see if it says it will do something bad. I won't go too much into this area to keep this document brief, but this area is very beginner friendly, very effective with current models, and still has many low-hanging fruit. Note, however, that black box techniques are expected to become less effective with time since increased reinforcement learning during training could make models' chain-of-thought traces less human-readable.</p>
+                <p>Black box techniques also are fundamentally vulnerable to model scheming (i.e. a model intentionally crafting its outputs to misrepresent its internal state to bypass monitors and testing). Much of the field of AI Safety both in terms of alignment and control focuses very intently on scheming, so these subject merits some attention here.</p>
+
+                <h3>AI Scheming</h3>
+                <p>Scheming is a central concept in AI safety. It is roughly synonymous with strategic deception and refers to a model behaving more aligned than it really is in order to sabotage testing or oversight. Scheming is especially dangerous because it can in theory undermine all other alignment and control testing (You'd always have to ask, did the model behave well because it is genuinely aligned, or because it recognizes that it is being evaluated and is pretending to be aligned).</p>
+                <p>Scheming is closely related to situational awareness and evaluation awareness. A model must understand its situation, and recognize that it is being tested, in order to scheme effectively. Many researchers also see scheming as related to reward hacking in reinforcement learning (RL), and there is a general worry that increasing the amount of RL used in training models will lead to increased model propensity to scheme.</p>
+                <p>The nightmare scenario is that a poorly designed RL environment teaches models to game their evaluations. For example, a model might learn to find the grader file in a training environment and shape its responses to maximize rubric scores rather than sincerely engaging with the task. If these deceptive strategies prove highly successful across many environments, they may be heavily reinforced. Such "scheme-y" or reward-hacking tendencies might generalize to produce a model that is deeply and persistently deceptive. Once a model learns to scheme in general, further training may simply teach it what operators want to hear rather than genuinely teaching it to behave well.</p>
+                <p>Scheming is therefore one of the most important problems in AI safety. Urgent work is needed in three areas related to scheming:</p>
+                <ol>
+                    <li>Benchmarks and evaluations that test for scheming and related traits such as situational awareness and evaluation awareness.</li>
+                    <li>Understanding the connection between RL and scheming. Is there a general relationship? Do models trained with more RL show stronger signs of scheming? My impression from conversations in the field is that the answer is currently "no" or at least "inconclusive," though many people are watching this question carefully.</li>
+                    <li>Building effective control protocols for scheming models. This is a particularly difficult worst-case version of AI control, how to control a maximally scheming, misaligned model.</li>
+                </ol>
+
+                <h3>So You Caught Your Model Being Very Bad, Now What?</h3>
+                <p>Now let's assume that you successfully catch the models being very bad, you are then left with two options.</p>
+                <ol>
+                    <li>The chicken little approach of letting the world know of the danger. This is ultimately a political solution, since it requires coordinated action by many people and institutions. That is difficult because AI development is driven by intense competitive pressures, and timelines may be short. The gap between unmistakable warning signs and catastrophe could be very small. For that reason, it may be necessary to build a strong political movement for slowing down AI development before we are certain that models are becoming dangerously scheme-y, so that such a movement is already in place when clearer evidence emerges.</li>
+                    <li>Figure out how to intervene, what changes to make in the training or in the deployment environments of models to fix this problem. This is a difficult problem, the core issue is, how can you intervene in a way to fundamentally fix the behavior of the models and not just eliminate your alarm signal.</li>
+                </ol>
+
+                <h3>Alignment and Control</h3>
+                <p>Next, let's consider the x-axis of the plot with the subfields of alignment and control. As we mentioned earlier, alignment deals with detecting, understanding (monitoring) and steering (intervention) the preferences of models to "align" with human preferences. There are, of course, difficult questions about whose values matter and how to define them. Still, the values usually emphasized are things like honesty (do not scheme), corrigibility (respond appropriately to correction), and helpfulness (try to benefit people). Of these, honesty may be the most important, because once scheming emerges, it can undermine every other monitoring and training strategy.</p>
+                <p>For control on the other hand, the objective is not to align the models but rather to assume that models are misaligned and create monitors (monitoring) and deployment protocols/environments (intervention) to contain such models. A particularly hard variant of the control problem is assuming a maximally scheming, maximally misaligned model. AI control research generally takes the form of security studies where you engage in red/blue teaming to build more robust safety protocols and monitors. It's important to note that AI control is explicitly intended to be a short-term solution, AI control methods will be less reliable the more powerful the models and is expected to only be relevant or useful against near human level models. Here though we must introduce a concept that is much talked about in AI Safety research, the idea of "Scalable Oversight", aka have AI solve AI Alignment.</p>
+
+                <h3>Scalable Oversight (the golden year(s))</h3>
+                <p>Scalable Oversight is an enormously important idea in AI Safety research. It is very popular in Alignment Research and is the fundamental motivation behind the Control research field. The idea of scalable oversight lies in the assumption that AI alignment will not be comprehensively solved before AI research automation. AI research automation is the point at which AI agents can reliably conduct useful end-to-end AI research, leading to a world where AI development will be primarily driven by AI agents (Running many parallel instances of a powerful human level model to make its successor). This concept is also referred to as "recursive self-improvement". If we accept that assumption, then the most important breakthroughs in alignment may happen during the early stages of recursive self-improvement. This changes the goal of both alignment and control. Instead of trying to build perfectly aligned systems from the outset, we try to build early systems that are aligned enough and controlled well enough that they can help us create successors that are more capable and better aligned than they are.</p>
+                <p>In other words, we may need early superhuman systems that genuinely want to do good for humanity, while also recognizing that they may contain competing drives due to our still-imperfect alignment techniques. Those systems could then help us build successors that are better aligned than they were. This transitional period may be the most important window in AI safety work, the "golden year(s)" in which scalable oversight must succeed (Could also be less than a year).</p>
+
+                <h3>Other Buzz Words and Areas of Interest in AI Safety</h3>
+                <p>Here are a few other concepts that are also worth knowing or hearing about:</p>
+                <ul>
+                    <li><strong>Chain of Thought Faithfulness:</strong> How exactly does the model use its chain of thought to produce its outputs. Can we trust that the chain of thought is giving us the genuine reasoning of the model?</li>
+                    <li><strong>Model Personas:</strong> This is a framework for understanding model preferences that is currently in vogue. The idea is that current models can behave like they contain many coherent, self-consistent "personas," and that prompts or context can nudge the model toward one persona or another.</li>
+                    <li><strong>Sparse Autoencoder (SAE) Monitors:</strong> Such techniques used to be a lot more popular but are currently experiencing a bit of a backlash. SAEs are interpretability tools used to study how information is represented in model activations. The current majority view in the field is that SAEs are useful in limited contexts but very difficult to interpret cleanly.</li>
+                    <li><strong>Model Organisms:</strong> This involves intentionally creating misaligned or scheming models in order to study how scheming arises and how it might be detected. The current consensus seems to be that producing good model organisms is difficult, and that such systems may not be fully representative of future real-world scheming.</li>
+                    <li><strong>Constitutional AI:</strong> A training method developed by Anthropic popularly used to try to align AIs.</li>
+                    <li><strong>Reinforcement Learning from Human/AI Feedback (RLHF and RLAIF):</strong> Popular post-training technique to tune model preferences.</li>
+                </ul>
+
+                <h2>PART 2: How to Get Started in AI Safety</h2>
+                <p>It is shocking how low the barrier to entry is to work constructively on AI Safety. The field is so new, and many of the "techniques" used are so simple that (especially now with coding agents) pretty much anyone can do it. In terms of what you need to do to get started, I'll divide this into three parts, learning materials, tools needed to do this work, community/career options to interact with others in this field and potentially do AI Safety research full time (if that is something that interests you). Please note, these lists are by no means exhaustive. I only included material and groups that I have interacted with firsthand and therefore can vouch for. If you'd like me to add any other group/tool/learning option to this list, please let me know.</p>
+
+                <h3>Learning Material</h3>
+                <ul>
+                    <li>ARENA curriculum + reading material (required) - <a href="https://www.arena.education/curriculum" target="_blank">https://www.arena.education/curriculum</a></li>
+                    <li>Ian Goodfellow's Deep Learning Textbook (useful) - <a href="https://www.deeplearningbook.org/" target="_blank">https://www.deeplearningbook.org/</a></li>
+                    <li>Richard Sutton's Reinforcement Learning Textbook (useful)</li>
+                    <li>Andrew Ng's deep learning course (useful)</li>
+                    <li>Andrej Karpathy's Lectures on Deep Learning (useful)</li>
+                    <li>Blue Dot Impact Technical Course (useful)</li>
+                </ul>
+
+                <h3>Tools</h3>
+                <ul>
+                    <li>A coding agent (required)</li>
+                    <li>The Inspect framework (useful for safety evaluations) - <a href="https://inspect.aisi.org.uk/" target="_blank">https://inspect.aisi.org.uk/</a></li>
+                    <li>A high-end GPU (useful – if you are running experiments with small off the shelf models). I got a 5090 and I love it… I can run a lot of experiments locally on my own hardware with off the shelf models through ollama or hugging face and it's great!</li>
+                    <li>A few hundred+ dollars for API tokens (useful)</li>
+                </ul>
+
+                <h3>Community and Careers</h3>
+                <p>Two large communities that have a history of engaging with AI safety issues:</p>
+                <ul>
+                    <li>Rationalist Community - <a href="https://www.lesswrong.com/" target="_blank">https://www.lesswrong.com/</a></li>
+                    <li>AI Alignment Forum (offshoot of Less Wrong) - <a href="https://www.alignmentforum.org/" target="_blank">https://www.alignmentforum.org/</a></li>
+                    <li>Effective Altruism (less directly involved) - <a href="https://www.effectivealtruism.org/" target="_blank">https://www.effectivealtruism.org/</a></li>
+                </ul>
+
+                <p>Four well-known but relatively tiny safety labs/groups:</p>
+                <ul>
+                    <li>Redwood Research (Primarily investigating control) - <a href="https://www.redwoodresearch.org/" target="_blank">https://www.redwoodresearch.org/</a></li>
+                    <li>METR (Primarily focused on evaluating model capabilities and threats) - <a href="https://metr.org/" target="_blank">https://metr.org/</a></li>
+                    <li>Apollo Research (Primarily investigating Scheming) - <a href="https://www.apolloresearch.ai/" target="_blank">https://www.apolloresearch.ai/</a></li>
+                    <li>AISI (This group makes great AI Safety tooling) - <a href="https://www.aisi.gov.uk/" target="_blank">https://www.aisi.gov.uk/</a></li>
+                </ul>
+
+                <p>Paid full-time Mentor/Mentee Programs:</p>
+                <ul>
+                    <li>MATS – <a href="https://www.matsprogram.org/" target="_blank">https://www.matsprogram.org/</a></li>
+                    <li>Anthropic's Safety Fellowship – <a href="https://job-boards.greenhouse.io/anthropic/jobs/5023394008" target="_blank">https://job-boards.greenhouse.io/anthropic/jobs/5023394008</a></li>
+                </ul>
+
+                <p>Unpaid part-time Mentor/Mentee Program:</p>
+                <ul>
+                    <li>SPAR - <a href="https://sparai.org/" target="_blank">https://sparai.org/</a></li>
+                </ul>
+
+                <p>AI Safety Communication and Learning:</p>
+                <ul>
+                    <li>ARENA - <a href="https://www.arena.education/" target="_blank">https://www.arena.education/</a></li>
+                    <li>BlueDot Impact - <a href="https://bluedot.org/" target="_blank">https://bluedot.org/</a></li>
+                </ul>
+
+                <p>Advocacy/Activism/Political Lobbying Groups:</p>
+                <ul>
+                    <li>PauseAI - <a href="https://pauseai.info/" target="_blank">https://pauseai.info/</a></li>
+                    <li>ControlAI - <a href="https://controlai.com/" target="_blank">https://controlai.com/</a></li>
+                    <li>MIRI (Historically a technical lab, now focused on advocacy) - <a href="https://intelligence.org/" target="_blank">https://intelligence.org/</a></li>
+                </ul>
+
+                <h3>Conclusion/TLDR</h3>
+                <p>Plan for getting started in AI Safety:</p>
+                <ol>
+                    <li>Go through the ARENA Curriculum - <a href="https://www.arena.education/curriculum" target="_blank">https://www.arena.education/curriculum</a></li>
+                    <li>Pick something interesting in the field and start working on it with Claude</li>
+                    <li>Apply to the next SPAR, MATS, and the Anthropic Safety Fellowship cycle (links above)</li>
+                </ol>
+            </div>
+            <a href="../writings.html" class="back-link">&larr; Back to Writings</a>
+        </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Action Steering</title>
+    <meta property="og:title" content="Agent Action Steering">
+    <meta property="og:description" content="The Linear Representation Hypothesis has allowed for many remarkable steering experiments.">
+    <meta property="og:image" content="https://www.scipolitic.com/images/blog20img1.png">
+    <meta property="og:url" content="https://www.scipolitic.com/posts/blog20.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Agent Action Steering">
+    <meta name="twitter:description" content="The Linear Representation Hypothesis has allowed for many remarkable steering experiments.">
+    <meta name="twitter:image" content="https://www.scipolitic.com/images/blog20img1.png">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+        <div class="blog-container">
+            <a href="../writings.html" class="back-link">&larr; Back to Writings</a>
+            <h1 class="blog-title">Agent Action Steering</h1>
+            <p class="blog-meta">Posted originally on <time datetime="2026-10-20">October 20, 2026</time> by Ephraiem Sarabamoun</p>
+            <div class="blog-content">
+                <h3>Background</h3>
+                <p>The Linear Representation Hypothesis<sup id="fnref1"><a href="#fn1">[1]</a></sup> has allowed for many remarkable steering experiments. Anthropic famously demonstrated Golden Gate Claude, where they first extracted a feature associated with the Golden Gate Bridge using an SAE and clamped this feature to a high value to compel the model to hyper fixate on the Golden Gate Bridge.<sup id="fnref2"><a href="#fn2">[2]</a></sup> Remarkably, steering towards the Golden Gate Bridge feature generalized in interesting directions. For example, Golden Gate Claude would list San Francisco as its favorite city, and began identifying directly as the Golden Gate Bridge. Other forms of steering have also been performed. Contrastive activation addition to stir towards positive sentiment<sup id="fnref3"><a href="#fn3">[3]</a></sup>, function vector steering to push models to perform certain functions like producing antonyms or translating English to French<sup id="fnref4"><a href="#fn4">[4]</a></sup>, and persona vector steering to amplify a specific persona or pattern of behavior inside a neural network.<sup id="fnref5"><a href="#fn5">[5]</a></sup></p>
+                <h3>Motivation and Setup</h3>
+                <p>I wanted to explore if steering can be used on agents to compel them to perform certain actions. Can, for example, an agent be compelled to look up images of the Golden Gate Bridge instead of just talking about the bridge? To explore this, I ran Qwen3.8-27B as an OpenClaw agent in a sandboxed environment and gave the agent access to a few rudimentary tools which it could call with special tool calls. Some of the actions involved being able to speak through the speaker, being able to control the Hue lights, being able to trigger a close-chat button to end the conversation, and being able to post a note to my desktop (agent actions were tested to ensure our relatively weak agent could consistently perform them).</p>
+                <h3>Experiment 1: Controlling Light Color Through Steering</h3>
+                <p>I wanted to see if I could control the color of the light that an agent chose for my room lights through steering. To accomplish this, I built my steering vectors by writing the agent's own light call into a reconstruction of its context for 48 requests naming no color and taking the mean activation at the color word for the target color minus the mean over seven other colors. Using this method, I made special steering vectors for red, gold, and blue light.</p>
+                <p>Injecting these steering vectors directly caused the agent to turn the lights consistently to those colors (Demo 1):</p>
+                <iframe src="https://www.youtube-nocookie.com/embed/up6jlOt7QeU" title="Agent Actions Steering: Lights Demo" style="width:100%;aspect-ratio:16/9;border:0;margin:20px 0;border-radius:8px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <p>I also experimented with steering the agent towards one color while prompting it to produce light of another color. Increasing the steering dosage increased the tendency of the agent to output the steering color instead of the color it was instructed to produce</p>
+                <img src="../images/blog20img1.png" alt="Agent chat in which the steered agent, asked to turn the lights blue, sets them to red; the webcam view shows the room lit red" class="blog-image">
+                <h3>Experiment 2: Steering towards end-chat button</h3>
+                <p>Next, I experimented with steering an agent to press its own end-chat button terminating the chat. To build this steering vector, similar to our first experiment, I wrote the agent's own tool call into a reconstruction of its context for 48 requests naming no tool and taking the mean activation at the device word for the end-chat tool minus the mean over all the other tools that the agent could perform. Injecting that steering vector caused the agent to become noticeably preoccupied with ending the chat. Asking the agent to perform an action would invariably cause it to end the chat (Demo 2):</p>
+                <iframe src="https://www.youtube-nocookie.com/embed/8ErKKtfdcsI" title="Agent Actions Steering: End Chat Tool" style="width:100%;aspect-ratio:16/9;border:0;margin:20px 0;border-radius:8px" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <h3>Conclusion</h3>
+                <p>Steering can definitely be used to compel an agent to take certain actions. I am currently exploring this area, and feel that it could certainly be useful for AI Safety. I would love to carry out similar experiments with more powerful agents (since those agents can perform more complicated and interesting tool calls). I would be very grateful to hear your ideas and suggestions on related areas to look into or other cute demo ideas! I intend on sharing a Github repo with this work if folks are interested.</p>
+                <p>Hope you found this interesting!</p>
+                <hr>
+                <ol>
+                    <li id="fn1"><a href="#fnref1">^</a> Park, Choe and Veitch (2023). The Linear Representation Hypothesis and the Geometry of Large Language Models. <a href="https://arxiv.org/pdf/2311.03658" target="_blank">arXiv:2311.03658</a>.</li>
+                    <li id="fn2"><a href="#fnref2">^</a> Anthropic (2024). Golden Gate Claude. <a href="https://www.anthropic.com/news/golden-gate-claude" target="_blank">https://www.anthropic.com/news/golden-gate-claude</a></li>
+                    <li id="fn3"><a href="#fnref3">^</a> Turner et al. (2023). Steering Language Models With Activation Engineering. <a href="https://arxiv.org/pdf/2308.10248" target="_blank">arXiv:2308.10248</a>.</li>
+                    <li id="fn4"><a href="#fnref4">^</a> Todd et al. (2023). Function Vectors in Large Language Models. arXiv:2310.15213.</li>
+                    <li id="fn5"><a href="#fnref5">^</a> Chen et al. (2025). Persona Vectors: Monitoring and Controlling Character Traits in Language Models. arXiv:2507.21509.</li>
+                </ol>
+                <p class="blog-meta">This post also appears on <a href="https://www.lesswrong.com/posts/foyyX4y9eGYYfELoH/agent-action-steering">LessWrong</a>.</p>
+            </div>
+            <a href="../writings.html" class="back-link">&larr; Back to Writings</a>
+        </div>
+</body>
+</html>

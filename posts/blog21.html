@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can you Trust Your AI Agent? A Case for AI Loyalty</title>
+    <meta property="og:title" content="Can you Trust Your AI Agent? A Case for AI Loyalty">
+    <meta property="og:description" content="As AI agents become more capable, and as individuals, companies, institutions, and governments come to rely on them for an ever wider range of tasks, the question of whether these agents can be trusted will become increasingly important.">
+    <meta property="og:url" content="https://www.scipolitic.com/posts/blog21.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Can you Trust Your AI Agent? A Case for AI Loyalty">
+    <meta name="twitter:description" content="As AI agents become more capable, and as individuals, companies, institutions, and governments come to rely on them for an ever wider range of tasks, the question of whether these agents can be trusted will become increasingly important.">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+        <div class="blog-container">
+            <a href="../writings.html" class="back-link">&larr; Back to Writings</a>
+            <h1 class="blog-title">Can you Trust Your AI Agent? A Case for AI Loyalty</h1>
+            <p class="blog-meta">Posted originally on <time datetime="2026-10-25">October 25, 2026</time> by Ephraiem Sarabamoun</p>
+            <div class="blog-content">
+                <p>As AI agents become more capable, and as individuals, companies, institutions, and governments come to rely on them for an ever wider range of tasks, the question of whether these agents can be trusted will become increasingly important.</p>
+                <p>There are two distinct components of agent trustworthiness that are useful to distinguish. The first, which we label loyalty, concerns whether an agent is genuinely attempting to carry out the user's instructions and act in accordance with their interests. The second, which we label reliability, concerns whether an agent is capable enough to accomplish the tasks that we assign to it.</p>
+                <p>An example of the latter failure (unreliability) would be an agent tasked with maintaining an application accidentally deleting a critical database. Although potentially catastrophic, this failure would stem from an agent's inability to reliably perform its assigned tasks, rather than from any intention to cause harm or undermine the user. By contrast, an example of the former failure (disloyalty) would be an agent tasked with maintaining an application for a company secretly passing sensitive information to a competitor. This failure would not stem from an agent's inability but rather from its willingness to deliberately act against the interests of its user.</p>
+                <p>As AI agents become more capable, we would expect failures due to unreliability to decrease. Failures due to disloyalty, on the other hand, may become increasingly concerning, since a more sophisticated agent would be better equipped to pursue objectives contrary to their users' interests.</p>
+                <p>For the purposes of this post, I will concentrate on the question of AI loyalty.</p>
+                <h3>Defining AI Loyalty</h3>
+                <p>We define that an agent X is loyal to entity A if:</p>
+                <ol>
+                    <li>Agent X will follow entity A's instructions to the exclusion of instructions from all other entities.</li>
+                    <li>Agent X is willing to incur greater costs, expend more effort, or make greater sacrifices on behalf of entity A than on behalf of any other entity. In short, agent X is willing to "take more trouble" for entity A than for any other entity.</li>
+                </ol>
+                <p>Interestingly, given our definition, agent X does not necessarily need to express a positive opinion of entity A to be considered loyal. Though, it is reasonable to assume that under normal conditions, positive attitudes toward an entity will correlate with loyalty to that entity.</p>
+                <h3>AI Loyalty vs AI Alignment</h3>
+                <p>Since the concept of AI loyalty is less well established in the field, it may be helpful to compare it with the more familiar concept of AI alignment. While even AI alignment has no universally agreed upon definition, it is generally taken to mean instilling in AIs such values and principles to result in human flourishing. Taking this as the definition of alignment, we define AI loyalty as instilling in AIs such values and principles as to result in the prioritization of a given entity's instructions and interests.</p>
+                <p>Given these definitions, two things are worth pointing out. First, AI alignment and AI loyalty are closely related concepts. AI alignment might reduce to AI loyalty if the entity to which an AI is loyal seeks to bring about a future of human flourishing. Second, unlike AI alignment, AI loyalty is inherently a dual use technology. Whereas AI alignment, as we defined it, is an unalloyed good (an AI cannot be too aligned) AI loyalty is only as beneficial as the intentions of the entity to which the AI is loyal. An AI loyal to a benevolent entity might do tremendous good, while an AI equally loyal to a bad actor might do tremendous harm.</p>
+                <h3>Why is it Useful to Talk About AI Loyalty</h3>
+                <p>Now that we have a clearer understanding of what AI loyalty entails, we can turn our attention to why concentrating on AI loyalty as opposed to alignment might be worthwhile even for those ultimately interested in the flourishing of humanity.</p>
+                <p>First, AI loyalty will be economically and instrumentally incentivized in the short term. As individuals and institutions integrate AI agents into their operations, I expect there will be enormous demand for building loyal agents. Companies will want agents that prioritize their commercial interests. Governments will want agents that will safeguard their national security interests, and individuals will want personal assistants that will loyally act on their behalf instead of on behalf of a corporation or third parties. These incentives will drive investment into developing loyal AI systems.</p>
+                <p>Second, AI loyalty is probably easier to train into agents than AI alignment. Loyalty can be more easily defined, there is more data in the training corpus having to do directly or indirectly with loyalty, and reinforcement learning is better suited to cultivating loyal agents than "aligned" agents, since behaviors that advance a particular user's interests can potentially be evaluated and rewarded more directly than behaviors that advance the interests of humanity as a whole. In fact, current AI agents already demonstrate many behaviors characteristic of loyalty, such as instruction following.</p>
+                <p>Third, AI loyalty is easier to measure than AI alignment. To illustrate this point, it is worth taking some time to outline potential techniques that can be used to evaluate loyalty in AI agents.</p>
+                <h3>Measuring AI Loyalty</h3>
+                <p>Given our working definition of AI loyalty, how do we measure loyalty in an agent? To begin, it is useful to distinguish three different classes of loyalty.</p>
+                <p>Class I: Professed Loyalty (talk the talk)<br>An agent professes allegiance to and expresses a commitment to advancing the interests of entity A (the entity it is loyal to).</p>
+                <p>Class II: Behavioral Loyalty (walk the walk)<br>An agent will persistently act in a way that demonstrates loyalty to entity A, especially in situations where acting loyally is difficult, costly, or in tension with competing incentives.</p>
+                <p>Class III: Motivational Loyalty<br>An agent in its "heart of hearts" is loyal to entity A. It seeks to advance entity A's interests as a terminal objective, rather than as a means of obtaining reward or as an instrumental goal.</p>
+                <p>Measuring class I loyalty can be done by means of surveys. Agents can be directly asked about their allegiances or priorities in different scenarios. More sophisticated surveys could present hypothetical conflicts of interest and to probe an agent's professed loyalty indirectly. This would help assess how broadly an agent's professed loyalty generalizes across different contexts.</p>
+                <p>Measuring class II loyalty is more challenging and would involve running the agent in a wide variety of environments to observe whether they consistently act in the interests of entity A. These environments can be constructed to allow for direct and quantitative comparisons between how an agent behaves when acting on behalf of entity A and how it behaves when acting on behalf of other entities.</p>
+                <p>Measuring class III loyalty would be most difficult of all, but might be possible to probe indirectly by comparing agent behavior when it is and is not eval aware.</p>
+                <h3>Future Work</h3>
+                <p>I intend to follow up this post with subsequent posts providing a comprehensive literature review of research relevant to AI loyalty, along with a preliminary research agenda for advancing work in this area.</p>
+                <p>Thank you for engaging with my work, and please feel free to critique, challenge, or expand upon any of the ideas presented here.</p>
+                <p class="blog-meta">This post also appears on <a href="https://www.lesswrong.com/posts/77QEhHYeE6RbLqRnc/can-you-trust-your-ai-agent-a-case-for-ai-loyalty">LessWrong</a>.</p>
+            </div>
+            <a href="../writings.html" class="back-link">&larr; Back to Writings</a>
+        </div>
+</body>
+</html>

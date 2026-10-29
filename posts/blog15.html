@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How does Reinforcement Learning Affect Models</title>
+    <meta property="og:title" content="How does Reinforcement Learning Affect Models">
+    <meta property="og:description" content="I wanted to share some reflections I have been having recently about how reinforcement learning in post-training may be affecting language models.">
+    <meta property="og:url" content="https://www.scipolitic.com/posts/blog15.html">
+    <meta property="og:type" content="article">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="How does Reinforcement Learning Affect Models">
+    <meta name="twitter:description" content="I wanted to share some reflections I have been having recently about how reinforcement learning in post-training may be affecting language models.">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+
+<body>
+        <div class="blog-container">
+            <a href="../writings.html" class="back-link">&larr; Back to Writings</a>
+            <h1 class="blog-title">How does Reinforcement Learning Affect Models</h1>
+            <p class="blog-meta">Posted originally on <time datetime="2026-04-26">April 26, 2026</time> by Ephraiem Sarabamoun</p>
+            <div class="blog-content">
+                <p>I wanted to share some reflections I have been having recently about how reinforcement learning in post-training may be affecting language models. This seems important for two reasons. First, much of the serious risk from advanced AI systems may come from post-training rather than pre-training alone. Second, reinforcement learning appears to be one of the main methods currently being scaled to make models more powerful, especially in reasoning-heavy domains.</p>
+                <p>To understand what may be happening, we need simple theories of how models work. These theories do not need to be perfectly correct. In fact, they almost certainly will not be. But they can still be useful if they give us handles for thinking about otherwise opaque systems. One of the most useful theories so far is the "persona theory" of language models.</p>
+                <p>Imagine that we train a model to predict the outputs of three people: Larry, Bob, and Alice. Larry is rude and impulsive. Bob is polite and careful. Alice is clever, helpful, and honest. If we train the model on enough text from all three people, the model becomes good at predicting each of them. One way to think about what the model has learned is that it has built something like three different predictors: a Larry predictor, a Bob predictor, and an Alice predictor. Then, when the model receives a new input, it implicitly asks: “What kind of text does this resemble? Who would say something like this?” If the prompt resembles Larry’s style, the model routes toward the Larry-like predictor. If it resembles Bob’s style, it routes toward Bob. If it resembles Alice, it routes toward Alice. Of course, this is a simplified picture. The model probably does not contain cleanly separated Larry, Bob, and Alice modules. But as an intuition pump, this framing is useful.</p>
+                <p>In this frame, supervised fine-tuning is relatively easy to understand. SFT gives the model many examples of the kind of assistant we want it to imitate. If Larry is rude while Bob and Alice are more helpful, then SFT pushes the model away from Larry-like completions and toward Bob/Alice-like completions. It does not necessarily erase Larry. Larry remains somewhere in the model’s learned distribution. But SFT changes which parts of that distribution are most likely to be expressed.</p>
+                <p>It is tempting to think that reinforcement learning works the same way. Perhaps RL is also just selecting between personas. Perhaps it is taking the same pre-trained simulator and saying: “Be more like Alice. Be less like Larry.” On this view, RL is basically SFT with a reward signal instead of direct demonstrations.</p>
+                <p>The clearest evidence that RL is not merely SFT its effects on CoT reasoning. Under sufficient RL pressure, CoT can become less human-readable and less faithful. That should make us suspicious of the idea that RL is simply selecting between pre-existing personas. If RL were only saying, “Be more like Alice and less like Larry,” we would expect the model’s reasoning to remain broadly human-like.</p>
+                <p>This means RL is not just choosing among Larry, Bob, and Alice. It is optimizing the model toward strategies that get reward, whether or not those strategies correspond to any human-like persona. Under weak RL, this may still look superficially like persona selection (it's interesting to investigate if indeed weak RL can be thought of as a persona selection technique), the model becomes more careful, helpful, concise, or deferential because those behaviors are rewarded. But under strong RL, the persona frame completely breaks.</p>
+                <p>This raises the key question, what happens in the transition regime? Does weak RL mostly amplify existing personas before stronger RL pushes the model into more alien, optimizer-like cognition? Where does that transition occur, and how could we measure it?</p>
+                <p class="blog-meta">This post also appears on <a href="https://www.lesswrong.com/posts/uhhmHuf2tgwWTHpRA/how-does-reinforcement-learning-affect-models">LessWrong</a>.</p>
+            </div>
+            <a href="../writings.html" class="back-link">&larr; Back to Writings</a>
+        </div>
+</body>
+</html>

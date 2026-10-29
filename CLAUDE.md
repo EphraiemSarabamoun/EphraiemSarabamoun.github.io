@@ -12,12 +12,18 @@ Push to `main` branch deploys automatically via GitHub Pages. No build step, CI/
 
 ## Architecture
 
-- **`index.html`** — Homepage with profile, bio, and navigation to Writings/Papers/Projects
-- **`writings.html`** — Blog listing page using table-based layout; highlighted rows use `bgcolor="#ffffd0"`
-- **`papers.html`** / **`projects.html`** — Placeholder pages
-- **`posts/blog[N].html`** — Individual blog posts (currently blog1–blog12)
-- **`styles.css`** — Single stylesheet for the entire site (Lato font via Google Fonts)
-- **`images/`** — All image assets, named `blog[N]img[M].[ext]` plus `profilepic.jpg`
+- **`index.html`** is the homepage with the profile, the bio, profile links and navigation to Writings, Papers and Projects.
+- **`writings.html`** is the blog listing page, a table layout where highlighted rows use `bgcolor="#ffffd0"`.
+- **`papers.html`** lists his papers, newest first, one table row per paper (title link, authors, venue and year, short summary).
+- **`projects.html`** lists his projects, newest first, one table row per project (title link, date, short description, then a row of GitHub, demo or dataset links).
+- **`posts/blog[N].html`** holds the blog posts, blog1 to blog21. There is no blog13, because it was renamed to blog14 to bust a cache.
+- **`styles.css`** is the single stylesheet for the entire site (Lato font via Google Fonts).
+- **`images/`** holds all image assets, named `blog[N]img[M].[ext]` plus `profilepic.jpg`.
+- **`Human.md`** explains the site in plain words for people reading the repo.
+
+## Content Rules
+
+Site copy is public. Use only facts Ephraiem has made public. Never add private details such as application outcomes, a pending employer, health, money, home address, phone, birth date, family, or the names of private repos. Link only public URLs, and check that each GitHub repo you link is public.
 
 ## Adding a New Blog Post
 

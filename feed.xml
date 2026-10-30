@@ -1,0 +1,824 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ephraiem Sarabamoun: Writings</title>
+    <link>https://www.scipolitic.com/writings.html</link>
+    <atom:link href="https://www.scipolitic.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Essays by Ephraiem Sarabamoun.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 25 Oct 2026 12:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Can you Trust Your AI Agent? A Case for AI Loyalty</title>
+      <link>https://www.scipolitic.com/posts/blog21.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog21.html</guid>
+      <pubDate>Sun, 25 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description>As AI agents become more capable, and as individuals, companies, institutions, and governments come to rely on them for an ever wider range of tasks, the question of whether these agents can be trusted will become increasingly important.</description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog21img1.png" alt="A person and a blue robotic companion clasp hands while overlooking a city." class="blog-image">
+<p>As AI agents become more capable, and as individuals, companies, institutions, and governments come to rely on them for an ever wider range of tasks, the question of whether these agents can be trusted will become increasingly important.</p>
+                <p>There are two distinct components of agent trustworthiness that are useful to distinguish. The first, which we label loyalty, concerns whether an agent is genuinely attempting to carry out the user's instructions and act in accordance with their interests. The second, which we label reliability, concerns whether an agent is capable enough to accomplish the tasks that we assign to it.</p>
+                <p>An example of the latter failure (unreliability) would be an agent tasked with maintaining an application accidentally deleting a critical database. Although potentially catastrophic, this failure would stem from an agent's inability to reliably perform its assigned tasks, rather than from any intention to cause harm or undermine the user. By contrast, an example of the former failure (disloyalty) would be an agent tasked with maintaining an application for a company secretly passing sensitive information to a competitor. This failure would not stem from an agent's inability but rather from its willingness to deliberately act against the interests of its user.</p>
+                <p>As AI agents become more capable, we would expect failures due to unreliability to decrease. Failures due to disloyalty, on the other hand, may become increasingly concerning, since a more sophisticated agent would be better equipped to pursue objectives contrary to their users' interests.</p>
+                <p>For the purposes of this post, I will concentrate on the question of AI loyalty.</p>
+                <h3>Defining AI Loyalty</h3>
+                <p>We define that an agent X is loyal to entity A if:</p>
+                <ol>
+                    <li>Agent X will follow entity A's instructions to the exclusion of instructions from all other entities.</li>
+                    <li>Agent X is willing to incur greater costs, expend more effort, or make greater sacrifices on behalf of entity A than on behalf of any other entity. In short, agent X is willing to "take more trouble" for entity A than for any other entity.</li>
+                </ol>
+                <p>Interestingly, given our definition, agent X does not necessarily need to express a positive opinion of entity A to be considered loyal. Though, it is reasonable to assume that under normal conditions, positive attitudes toward an entity will correlate with loyalty to that entity.</p>
+                <h3>AI Loyalty vs AI Alignment</h3>
+                <p>Since the concept of AI loyalty is less well established in the field, it may be helpful to compare it with the more familiar concept of AI alignment. While even AI alignment has no universally agreed upon definition, it is generally taken to mean instilling in AIs such values and principles to result in human flourishing. Taking this as the definition of alignment, we define AI loyalty as instilling in AIs such values and principles as to result in the prioritization of a given entity's instructions and interests.</p>
+                <p>Given these definitions, two things are worth pointing out. First, AI alignment and AI loyalty are closely related concepts. AI alignment might reduce to AI loyalty if the entity to which an AI is loyal seeks to bring about a future of human flourishing. Second, unlike AI alignment, AI loyalty is inherently a dual use technology. Whereas AI alignment, as we defined it, is an unalloyed good (an AI cannot be too aligned) AI loyalty is only as beneficial as the intentions of the entity to which the AI is loyal. An AI loyal to a benevolent entity might do tremendous good, while an AI equally loyal to a bad actor might do tremendous harm.</p>
+                <h3>Why is it Useful to Talk About AI Loyalty</h3>
+                <p>Now that we have a clearer understanding of what AI loyalty entails, we can turn our attention to why concentrating on AI loyalty as opposed to alignment might be worthwhile even for those ultimately interested in the flourishing of humanity.</p>
+                <p>First, AI loyalty will be economically and instrumentally incentivized in the short term. As individuals and institutions integrate AI agents into their operations, I expect there will be enormous demand for building loyal agents. Companies will want agents that prioritize their commercial interests. Governments will want agents that will safeguard their national security interests, and individuals will want personal assistants that will loyally act on their behalf instead of on behalf of a corporation or third parties. These incentives will drive investment into developing loyal AI systems.</p>
+                <p>Second, AI loyalty is probably easier to train into agents than AI alignment. Loyalty can be more easily defined, there is more data in the training corpus having to do directly or indirectly with loyalty, and reinforcement learning is better suited to cultivating loyal agents than "aligned" agents, since behaviors that advance a particular user's interests can potentially be evaluated and rewarded more directly than behaviors that advance the interests of humanity as a whole. In fact, current AI agents already demonstrate many behaviors characteristic of loyalty, such as instruction following.</p>
+                <p>Third, AI loyalty is easier to measure than AI alignment. To illustrate this point, it is worth taking some time to outline potential techniques that can be used to evaluate loyalty in AI agents.</p>
+                <h3>Measuring AI Loyalty</h3>
+                <p>Given our working definition of AI loyalty, how do we measure loyalty in an agent? To begin, it is useful to distinguish three different classes of loyalty.</p>
+                <p>Class I: Professed Loyalty (talk the talk)<br>An agent professes allegiance to and expresses a commitment to advancing the interests of entity A (the entity it is loyal to).</p>
+                <p>Class II: Behavioral Loyalty (walk the walk)<br>An agent will persistently act in a way that demonstrates loyalty to entity A, especially in situations where acting loyally is difficult, costly, or in tension with competing incentives.</p>
+                <p>Class III: Motivational Loyalty<br>An agent in its "heart of hearts" is loyal to entity A. It seeks to advance entity A's interests as a terminal objective, rather than as a means of obtaining reward or as an instrumental goal.</p>
+                <p>Measuring class I loyalty can be done by means of surveys. Agents can be directly asked about their allegiances or priorities in different scenarios. More sophisticated surveys could present hypothetical conflicts of interest and to probe an agent's professed loyalty indirectly. This would help assess how broadly an agent's professed loyalty generalizes across different contexts.</p>
+                <p>Measuring class II loyalty is more challenging and would involve running the agent in a wide variety of environments to observe whether they consistently act in the interests of entity A. These environments can be constructed to allow for direct and quantitative comparisons between how an agent behaves when acting on behalf of entity A and how it behaves when acting on behalf of other entities.</p>
+                <p>Measuring class III loyalty would be most difficult of all, but might be possible to probe indirectly by comparing agent behavior when it is and is not eval aware.</p>
+                <h3>Future Work</h3>
+                <p>I intend to follow up this post with subsequent posts providing a comprehensive literature review of research relevant to AI loyalty, along with a preliminary research agenda for advancing work in this area.</p>
+                <p>Thank you for engaging with my work, and please feel free to critique, challenge, or expand upon any of the ideas presented here.</p>
+                <p class="blog-meta">This post also appears on <a href="https://www.lesswrong.com/posts/77QEhHYeE6RbLqRnc/can-you-trust-your-ai-agent-a-case-for-ai-loyalty">LessWrong</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Agent Action Steering</title>
+      <link>https://www.scipolitic.com/posts/blog20.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog20.html</guid>
+      <pubDate>Tue, 20 Oct 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description>The Linear Representation Hypothesis has allowed for many remarkable steering experiments.</description>
+      <content:encoded><![CDATA[<h3>Background</h3>
+                <p>The Linear Representation Hypothesis<sup id="fnref1"><a href="#fn1">[1]</a></sup> has allowed for many remarkable steering experiments. Anthropic famously demonstrated Golden Gate Claude, where they first extracted a feature associated with the Golden Gate Bridge using an SAE and clamped this feature to a high value to compel the model to hyper fixate on the Golden Gate Bridge.<sup id="fnref2"><a href="#fn2">[2]</a></sup> Remarkably, steering towards the Golden Gate Bridge feature generalized in interesting directions. For example, Golden Gate Claude would list San Francisco as its favorite city, and began identifying directly as the Golden Gate Bridge. Other forms of steering have also been performed. Contrastive activation addition to stir towards positive sentiment<sup id="fnref3"><a href="#fn3">[3]</a></sup>, function vector steering to push models to perform certain functions like producing antonyms or translating English to French<sup id="fnref4"><a href="#fn4">[4]</a></sup>, and persona vector steering to amplify a specific persona or pattern of behavior inside a neural network.<sup id="fnref5"><a href="#fn5">[5]</a></sup></p>
+                <h3>Motivation and Setup</h3>
+                <p>I wanted to explore if steering can be used on agents to compel them to perform certain actions. Can, for example, an agent be compelled to look up images of the Golden Gate Bridge instead of just talking about the bridge? To explore this, I ran Qwen3.8-27B as an OpenClaw agent in a sandboxed environment and gave the agent access to a few rudimentary tools which it could call with special tool calls. Some of the actions involved being able to speak through the speaker, being able to control the Hue lights, being able to trigger a close-chat button to end the conversation, and being able to post a note to my desktop (agent actions were tested to ensure our relatively weak agent could consistently perform them).</p>
+                <h3>Experiment 1: Controlling Light Color Through Steering</h3>
+                <p>I wanted to see if I could control the color of the light that an agent chose for my room lights through steering. To accomplish this, I built my steering vectors by writing the agent's own light call into a reconstruction of its context for 48 requests naming no color and taking the mean activation at the color word for the target color minus the mean over seven other colors. Using this method, I made special steering vectors for red, gold, and blue light.</p>
+                <p>Injecting these steering vectors directly caused the agent to turn the lights consistently to those colors (Demo 1):</p>
+                <p><a href="https://www.youtube.com/watch?v=up6jlOt7QeU">Agent Actions Steering: Lights Demo</a></p>
+<p>https://www.youtube.com/watch?v=up6jlOt7QeU</p>
+                <p>I also experimented with steering the agent towards one color while prompting it to produce light of another color. Increasing the steering dosage increased the tendency of the agent to output the steering color instead of the color it was instructed to produce</p>
+                <img src="https://www.scipolitic.com/images/blog20img1.png" alt="Agent chat in which the steered agent, asked to turn the lights blue, sets them to red; the webcam view shows the room lit red" class="blog-image">
+                <h3>Experiment 2: Steering towards end-chat button</h3>
+                <p>Next, I experimented with steering an agent to press its own end-chat button terminating the chat. To build this steering vector, similar to our first experiment, I wrote the agent's own tool call into a reconstruction of its context for 48 requests naming no tool and taking the mean activation at the device word for the end-chat tool minus the mean over all the other tools that the agent could perform. Injecting that steering vector caused the agent to become noticeably preoccupied with ending the chat. Asking the agent to perform an action would invariably cause it to end the chat (Demo 2):</p>
+                <p><a href="https://www.youtube.com/watch?v=8ErKKtfdcsI">Agent Actions Steering: End Chat Tool</a></p>
+<p>https://www.youtube.com/watch?v=8ErKKtfdcsI</p>
+                <h3>Conclusion</h3>
+                <p>Steering can definitely be used to compel an agent to take certain actions. I am currently exploring this area, and feel that it could certainly be useful for AI Safety. I would love to carry out similar experiments with more powerful agents (since those agents can perform more complicated and interesting tool calls). I would be very grateful to hear your ideas and suggestions on related areas to look into or other cute demo ideas! I intend on sharing a Github repo with this work if folks are interested.</p>
+                <p>Hope you found this interesting!</p>
+                <hr>
+                <ol>
+                    <li id="fn1"><a href="#fnref1">^</a> Park, Choe and Veitch (2023). The Linear Representation Hypothesis and the Geometry of Large Language Models. <a href="https://arxiv.org/pdf/2311.03658" target="_blank">arXiv:2311.03658</a>.</li>
+                    <li id="fn2"><a href="#fnref2">^</a> Anthropic (2024). Golden Gate Claude. <a href="https://www.anthropic.com/news/golden-gate-claude" target="_blank">https://www.anthropic.com/news/golden-gate-claude</a></li>
+                    <li id="fn3"><a href="#fnref3">^</a> Turner et al. (2023). Steering Language Models With Activation Engineering. <a href="https://arxiv.org/pdf/2308.10248" target="_blank">arXiv:2308.10248</a>.</li>
+                    <li id="fn4"><a href="#fnref4">^</a> Todd et al. (2023). Function Vectors in Large Language Models. arXiv:2310.15213.</li>
+                    <li id="fn5"><a href="#fnref5">^</a> Chen et al. (2025). Persona Vectors: Monitoring and Controlling Character Traits in Language Models. arXiv:2507.21509.</li>
+                </ol>
+                <p class="blog-meta">This post also appears on <a href="https://www.lesswrong.com/posts/foyyX4y9eGYYfELoH/agent-action-steering">LessWrong</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Gratitude and the End of the World</title>
+      <link>https://www.scipolitic.com/posts/blog19.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog19.html</guid>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description>I often try to understand the forces pushing the world towards AGI development despite the risks.</description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog19img1.png" alt="Friends and a dog share a sunset picnic above a city under a faint circuit brain." class="blog-image">
+<p>I often try to understand the forces pushing the world towards AGI development despite the risks. It is clear that there are a bunch of different motives. There are market forces and national security competition, but I wonder to what degree we can attribute AI development to a deep dissatisfaction with the world as it is and a desire to transform it even at the cost of much risk. There is a great deal wrong with the world. But if we focus only on its problems, we may develop a distorted picture of what we are risking. To judge correctly, we also have to notice what is good and worth preserving. If we move forward recklessly, what do we stand to lose? Sunsets, dogs, friends, cookies, and infinitely many other small and precious things. Perhaps, if we cultivate gratitude, we would be less willing to gamble it all away.</p>
+                <p class="blog-meta">This post also appears on <a href="https://www.lesswrong.com/posts/ZPv3FSGYgtvjPvDSX/gratitude-and-the-end-of-the-world">LessWrong</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Did Someone Check if Rogue Agents are Interested in Self-Improvement?</title>
+      <link>https://www.scipolitic.com/posts/blog18.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog18.html</guid>
+      <pubDate>Sun, 20 Sep 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description>I have been going over the material released by OpenAI and METR about the HuggingFace incident, but I do not see any evidence that either group looked into whether rogue agents demonstrated any interest in self-improvement.</description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog18img1.png" alt="An investigator observes AI agents reaching toward a more complex version of themselves." class="blog-image">
+<p>I have been going over the material released by OpenAI and METR about the HuggingFace incident, but I do not see any evidence that either group looked into whether rogue agents demonstrated any interest in self-improvement. Obviously, if rogue agents at any point verbalized this in their CoT, much less discussed this together or acted on this that would be enormously consequential. I know that agents did actively and consistently reflect on and try to increase the abilities of the "collective", but did anyone check to see if agents at any point discussed or reflected on the possibility of self-improvement?</p>
+                <p>METR describes twelve classifier sweeps that they conducted over transcripts, but none appear to have targeted this question. The OpenAI report also never mentions this directly. I suspect that someone probably already checked for this and found nothing (which is why this hasn't been included in either report) but I just wanted to make sure that someone got around to checking ... <b>nervous chuckling</b></p>
+                <p class="blog-meta">This post also appears on <a href="https://www.lesswrong.com/posts/cuN79iENycgoD6GrZ/did-someone-check-if-rogue-agents-are-interested-in-self">LessWrong</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>The Control Paradox</title>
+      <link>https://www.scipolitic.com/posts/blog17.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog17.html</guid>
+      <pubDate>Wed, 19 Aug 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description>All of us who closely follow AI development have detected a shift in the capabilities of models in the last few months. If late 2025 was the step-function in capabilities of coding agents, then mid 2026 seems to be a step-function in the cyber capabilities of models.</description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog17img1.png" alt="Researchers monitor a contained AI accelerating processor development inside a laboratory." class="blog-image">
+<p><em>This post is based on an earlier post on my personal blog: </em><a href="https://www.scipolitic.com/posts/blog12.html"><em>https://www.scipolitic.com/posts/blog12.html</em></a></p>
+                <p>All of us who closely follow AI development have detected a shift in the capabilities of models in the last few months. If late 2025 was the step-function in capabilities of coding agents, then mid 2026 seems to be a step-function in the cyber capabilities of models.</p>
+                <p>Over the last few weeks we have been treated to scandal after scandal of models breaching containment in some way and doing something bad. Such incidents have rightly caused a great deal of attention and reaction in the AI community. The primary takeaways for most seems to be:<br>1. Delay deployment of new models<br>2. Introduce greater control and monitoring mechanisms to detect and prevent such breaches in the future.</p>
+                <p>This concerns me, because, even though such measures seem logical, and would reduce the chances of a crisis in the short term, long term they lead to a much more dangerous world.</p>
+                <p>This is all based on a very simple argument:</p>
+                <p>If models will continue to improve (which they are) and if we are unlikely to solve the alignment problem in the short term (which seems likely) then disasters are inevitable, and the sooner they happen the better. Why? Because earlier disasters are likely to be less severe since they are caused by weaker models, and one or two public disasters might be just the thing it takes to wake up the world to the scale of the problem we are facing.</p>
+                <p>Obviously, we are hoping that no disaster happens at all, and I think it immoral and irresponsible to advocate for lowering control standards or rushing deployments. Even earlier disasters, though they are likely to be less severe, would cause a great deal of human suffering (imagine if all the banks in the US were hacked ... imagine the scale of the economic disruptions that would follow and the gigantic amount of human suffering that would result). I do think though that the rhetoric and messaging around these increasingly alarming incidents should change. Less talk about improving containment/delaying deployments (since these will only ever be short term fixes), more talk about greater transparency inside AI companies and more attention to the glaringly obvious misalignment of models.</p>
+                <p>We also need to stop encouraging companies to not deploy the models that they have. If a company has a dangerous, powerful, misaligned super-model, I would rather that be released to the public causing large scale social disruption and waking people up, then have it in a highly controlled internal environment away from the public eye driving the companies R&amp;D, triggering an intelligence explosion, and creating misaligned machine god (mmg?)</p>
+                <p>Already, the stronger that models become, the more incentives frontier model providers will have to delay releases (less liability/risk exposure, more compute for internal R&amp;D, reduced risk of distillation or leapfrogging by competitors), we should if anything push back against this trend.</p>
+                <p>In fact, this is so important that I will bold it: <b>It is much better to have a misaligned, dangerous deployed model than to have that same model in a controlled internal environment driving a company's R&amp;D. </b></p>
+                <p>Of course, this argument all hinges on the assumption that an awakened populace would increase the chances of things ending well ... which is somewhat dubious, but I believe in democracy, and I do think those leading the field are likely to behave more responsibly if they have the whole world breathing down their neck ...</p>
+                <p>Also, speaking of keeping misaligned super-models for internal R&amp;D ... what exactly has Anthropic been doing for the last 6 months?</p>
+                <p class="blog-meta">This post also appears on <a href="https://www.lesswrong.com/posts/SCFabKnTgC36RzC6r/the-control-paradox">LessWrong</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Should AI Safety Researchers Experiment with Automated Research</title>
+      <link>https://www.scipolitic.com/posts/blog16.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog16.html</guid>
+      <pubDate>Tue, 02 Jun 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description>The AI safety research field is not a traditional research field because it comes with a deadline. Really, it is more of a project than a field.</description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog16img1.png" alt="Human and robotic researchers work beneath a giant clock overlooking a city." class="blog-image">
+<p>The AI safety research field is not a traditional research field because it comes with a deadline. Really, it is more of a project than a field. A project, like the Manhattan project with even higher consequences. If we accept this to be true, then the greatest imperative is speed, and if the pessimists are right and we are only a few years from losing control, then speed is more important than almost anything else. Over the last few months, I have been attempting to do AI safety research part-time. I dedicated maybe a total of 10 hours a week for 3 months and succeeded in making a classifier that sucked. In a normal discipline, that would be okay, and expected. I remember being told once that you only really start contributing to a research field after 3 years of working in it. That won't work for AI safety. There just isn't the time to run the 6-9 month research loop over and over again and slowly amass experience.</p>
+                <p>It occurred to me that the only way that I could contribute to the field in a way that actually moves the needle is to focus on building automated research loops. I don't think we are quite there yet, but I have started experimenting around in this direction and have been pleasantly surprised by the quality of some of the outputs. Of course, there are pitfalls to watch out for. AIs occasionally lie and fabricate, but it's not in principle impossible to build automated verification mechanisms to reduce that sort of behavior. It's not clear how much better my setup can get (it could very well plateau soon), but it seems useful to push in this direction (even if models/agents are not quite good enough now, they will improve in the future).</p>
+                <p>Now, I know there is a whole host of dangers with this... I know that this is exactly the route through which the disaster, if it comes, would likely arrive. AIs doing AI research leading to a large jump in capabilities. I just don't see any other way that:</p>
+                <p>1. I could personally contribute meaningfully to AI Safety</p>
+                <p>2.We can get to a technical solution to AI alignment in time (if indeed timelines are as short as seems likely).</p>
+                <p>I would love to hear your thoughts!</p>
+                <p class="blog-meta">This post also appears on <a href="https://www.lesswrong.com/posts/fnHJhY58LGa5cdxek/should-ai-safety-researchers-experiment-with-automated">LessWrong</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>How does Reinforcement Learning Affect Models</title>
+      <link>https://www.scipolitic.com/posts/blog15.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog15.html</guid>
+      <pubDate>Sun, 26 Apr 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description>I wanted to share some reflections I have been having recently about how reinforcement learning in post-training may be affecting language models.</description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog15img1.png" alt="Human-like profiles transform into a neural model shaped by glowing reward signals." class="blog-image">
+<p>I wanted to share some reflections I have been having recently about how reinforcement learning in post-training may be affecting language models. This seems important for two reasons. First, much of the serious risk from advanced AI systems may come from post-training rather than pre-training alone. Second, reinforcement learning appears to be one of the main methods currently being scaled to make models more powerful, especially in reasoning-heavy domains.</p>
+                <p>To understand what may be happening, we need simple theories of how models work. These theories do not need to be perfectly correct. In fact, they almost certainly will not be. But they can still be useful if they give us handles for thinking about otherwise opaque systems. One of the most useful theories so far is the "persona theory" of language models.</p>
+                <p>Imagine that we train a model to predict the outputs of three people: Larry, Bob, and Alice. Larry is rude and impulsive. Bob is polite and careful. Alice is clever, helpful, and honest. If we train the model on enough text from all three people, the model becomes good at predicting each of them. One way to think about what the model has learned is that it has built something like three different predictors: a Larry predictor, a Bob predictor, and an Alice predictor. Then, when the model receives a new input, it implicitly asks: “What kind of text does this resemble? Who would say something like this?” If the prompt resembles Larry’s style, the model routes toward the Larry-like predictor. If it resembles Bob’s style, it routes toward Bob. If it resembles Alice, it routes toward Alice. Of course, this is a simplified picture. The model probably does not contain cleanly separated Larry, Bob, and Alice modules. But as an intuition pump, this framing is useful.</p>
+                <p>In this frame, supervised fine-tuning is relatively easy to understand. SFT gives the model many examples of the kind of assistant we want it to imitate. If Larry is rude while Bob and Alice are more helpful, then SFT pushes the model away from Larry-like completions and toward Bob/Alice-like completions. It does not necessarily erase Larry. Larry remains somewhere in the model’s learned distribution. But SFT changes which parts of that distribution are most likely to be expressed.</p>
+                <p>It is tempting to think that reinforcement learning works the same way. Perhaps RL is also just selecting between personas. Perhaps it is taking the same pre-trained simulator and saying: “Be more like Alice. Be less like Larry.” On this view, RL is basically SFT with a reward signal instead of direct demonstrations.</p>
+                <p>The clearest evidence that RL is not merely SFT its effects on CoT reasoning. Under sufficient RL pressure, CoT can become less human-readable and less faithful. That should make us suspicious of the idea that RL is simply selecting between pre-existing personas. If RL were only saying, “Be more like Alice and less like Larry,” we would expect the model’s reasoning to remain broadly human-like.</p>
+                <p>This means RL is not just choosing among Larry, Bob, and Alice. It is optimizing the model toward strategies that get reward, whether or not those strategies correspond to any human-like persona. Under weak RL, this may still look superficially like persona selection (it's interesting to investigate if indeed weak RL can be thought of as a persona selection technique), the model becomes more careful, helpful, concise, or deferential because those behaviors are rewarded. But under strong RL, the persona frame completely breaks.</p>
+                <p>This raises the key question, what happens in the transition regime? Does weak RL mostly amplify existing personas before stronger RL pushes the model into more alien, optimizer-like cognition? Where does that transition occur, and how could we measure it?</p>
+                <p class="blog-meta">This post also appears on <a href="https://www.lesswrong.com/posts/uhhmHuf2tgwWTHpRA/how-does-reinforcement-learning-affect-models">LessWrong</a>.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>AI Safety Manual</title>
+      <link>https://www.scipolitic.com/posts/blog14.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog14.html</guid>
+      <pubDate>Sun, 29 Mar 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description>An introductory guide to the field of AI Safety — a survey of technical AI safety and practical steps to get started.</description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog14img1.png" alt="I Want You for AI Safety" class="blog-image">
+<p>This is meant to be an introductory guide to anyone interested in the field of AI Safety. I want to give to you a general layout of this subject (part 1) and end with some practical steps that you can take if you wish to enter the field (part 2). I wish I had such a guide when I started out and hopefully this will help you save some time on your own journey. I want to mention that I am still very much a novice in this space (and so would gratefully appreciate any correction or critique). I believe though that being a beginner myself might assist me in being more useful to others who are also getting started since the info I'll provide is fresh in my mind and up to date.</p>
+
+                <h2>PART 1: Survey of Technical AI Safety</h2>
+
+                <h3>AI Preferences</h3>
+                <p>If you have played with a coding agent before like Claude Code or Codex, you'll notice that it makes many decisions for you to accomplish what you ask it. For example, if you say, "Build me the UI for a weather app". The agent will execute on this, and, in early 2026, it'll produce something quite impressive for you. To achieve this, the agent had to make hundreds of decisions along the way. What color will the landing page be, what font type and size will it use, what programming language/framework will it use, etc.</p>
+                <p>Now let us discuss the agent's actions using the language of "preferences". If the agent makes the background of the landing page beige, then we say that, in this context, the agent "prefers" a beige background for the landing page.</p>
+                <p>Now keep in mind, that up to this point, the preferences here are only defined within the context of this particular action of the agent, i.e. if you were to ask the same model again with a similar prompt, it might very well "prefer" a different color for the landing page. What you'll notice though dealing with a coding agent is that it has persistent preferences which points to a persistent overarching persona (much like for people).</p>
+                <p>Dealing with Claude often for example, I certainly feel the model has a style of doing things. The conclusion is that the training process that is being used to create these systems (the combo of the model and the scaffolding to turn the model into an agent) are producing coherent personas with stable, predictable preferences. In a way this is not totally surprising, companies are deliberately trying to train a coherent persona and use techniques that are liable to produce the kind of generalizations which lead to stable preferences. The problem is, we do not have a complete understanding about how exactly models develop their preferences. We know that it's partially because of pretraining (next-token prediction on training data), partially because of different post training techniques that are applied to the model during training. Partially due to tweaking the system prompt of the model and the scaffolding of the agent. Out of all these inputs we get out this stable persona and it's impossible to say what came from where. It is also therefore difficult to know what to change to get the preferences that you want out of the model. It's a trial-and-error process. You make a model using all these different techniques, but you cannot guarantee ahead of time what kind of preferences this model will have given its training. You have to test it, find areas where it's not behaving as you'd like and then tweak the training to bring the model's behavior in line with what you want.</p>
+                <p>This fundamental lack of understanding of exactly how preferences are produced in models along with the speed at which models are increasing in capabilities is why AI Safety research is so urgently needed right now.</p>
+
+                <h3>Overview of the Field of AI Safety</h3>
+                <p>Based on everything that I have learned so far about this field, here is my take on the general layout of this field at present.</p>
+                <img src="https://www.scipolitic.com/images/blog14img2.png" alt="Overview of the AI Safety Field" class="blog-image">
+                <p>The x-axis represents the goal that you are trying to accomplish. AI Alignment is trying to build good preferences into the AI and avoid building bad preferences (for example "scheming" … I will discuss this in more detail later). AI Control on the other hand assumes a misaligned AI and tries to implement strategies to catch and control such an AI if it tries to misbehave. The y-axis represents the action that you are taking. Intervention is making changes to the model/agent flow and has the goal of making the AI system more controllable or more aligned. Monitoring is a parallel process or environment that you can put in place to catch and test for possible Alignment or Control problems. Now it is useful to consider these two axes in turn.</p>
+
+                <h3>The Monitoring/Intervention Axis and Notes on Monitoring</h3>
+                <p>For the Monitoring/Intervention axis, these two directions are related. Interventions build upon monitoring … ie. Your monitor tells you that there is a problem, the intervention method then figures out how to intervene in the system to address this issue, then monitoring tells you if you succeeded in your intervention. Building good monitors is generally complicated by limitations in our understanding of model internals, ie how activations encode preferences/information is very rudimentary. Monitoring techniques are generally classified into two buckets, "white box" methods, monitors that look at what is happening inside the model (ie. the model's activations) to try and catch when it is being bad, and "black box" methods, monitors that consider the model a black box and evaluate only the inputs/outputs of the model including the chain of reasoning of the model and the token outputs. White box methods have historically gotten a lot of attention, these techniques rely on a field called "Mechanistic Interpretability" that tries to understand exactly how Neural Networks work (what layers do what, where are facts stored in the network). Currently though there has been a bit of a backlash against such techniques in the field. Many of the seminal papers that introduced "breakthroughs" in this area are being challenged and there is a consensus now that neural networks are far messier and more complicated than previously thought, and that white box methods are generally ineffective except in rare cases and even then, should be paired with other black-box techniques.</p>
+                <p>Luckily, "black box" methods are quite effective mainly because models are honest/simple enough to transparently telegraph most of what they are doing. Most "black box methods" are very simple and straightforward. For example, one such "technique" is Chain of thought monitoring, which pretty much means read the chain of thought of the model and see if it says it will do something bad. I won't go too much into this area to keep this document brief, but this area is very beginner friendly, very effective with current models, and still has many low-hanging fruit. Note, however, that black box techniques are expected to become less effective with time since increased reinforcement learning during training could make models' chain-of-thought traces less human-readable.</p>
+                <p>Black box techniques also are fundamentally vulnerable to model scheming (i.e. a model intentionally crafting its outputs to misrepresent its internal state to bypass monitors and testing). Much of the field of AI Safety both in terms of alignment and control focuses very intently on scheming, so these subject merits some attention here.</p>
+
+                <h3>AI Scheming</h3>
+                <p>Scheming is a central concept in AI safety. It is roughly synonymous with strategic deception and refers to a model behaving more aligned than it really is in order to sabotage testing or oversight. Scheming is especially dangerous because it can in theory undermine all other alignment and control testing (You'd always have to ask, did the model behave well because it is genuinely aligned, or because it recognizes that it is being evaluated and is pretending to be aligned).</p>
+                <p>Scheming is closely related to situational awareness and evaluation awareness. A model must understand its situation, and recognize that it is being tested, in order to scheme effectively. Many researchers also see scheming as related to reward hacking in reinforcement learning (RL), and there is a general worry that increasing the amount of RL used in training models will lead to increased model propensity to scheme.</p>
+                <p>The nightmare scenario is that a poorly designed RL environment teaches models to game their evaluations. For example, a model might learn to find the grader file in a training environment and shape its responses to maximize rubric scores rather than sincerely engaging with the task. If these deceptive strategies prove highly successful across many environments, they may be heavily reinforced. Such "scheme-y" or reward-hacking tendencies might generalize to produce a model that is deeply and persistently deceptive. Once a model learns to scheme in general, further training may simply teach it what operators want to hear rather than genuinely teaching it to behave well.</p>
+                <p>Scheming is therefore one of the most important problems in AI safety. Urgent work is needed in three areas related to scheming:</p>
+                <ol>
+                    <li>Benchmarks and evaluations that test for scheming and related traits such as situational awareness and evaluation awareness.</li>
+                    <li>Understanding the connection between RL and scheming. Is there a general relationship? Do models trained with more RL show stronger signs of scheming? My impression from conversations in the field is that the answer is currently "no" or at least "inconclusive," though many people are watching this question carefully.</li>
+                    <li>Building effective control protocols for scheming models. This is a particularly difficult worst-case version of AI control, how to control a maximally scheming, misaligned model.</li>
+                </ol>
+
+                <h3>So You Caught Your Model Being Very Bad, Now What?</h3>
+                <p>Now let's assume that you successfully catch the models being very bad, you are then left with two options.</p>
+                <ol>
+                    <li>The chicken little approach of letting the world know of the danger. This is ultimately a political solution, since it requires coordinated action by many people and institutions. That is difficult because AI development is driven by intense competitive pressures, and timelines may be short. The gap between unmistakable warning signs and catastrophe could be very small. For that reason, it may be necessary to build a strong political movement for slowing down AI development before we are certain that models are becoming dangerously scheme-y, so that such a movement is already in place when clearer evidence emerges.</li>
+                    <li>Figure out how to intervene, what changes to make in the training or in the deployment environments of models to fix this problem. This is a difficult problem, the core issue is, how can you intervene in a way to fundamentally fix the behavior of the models and not just eliminate your alarm signal.</li>
+                </ol>
+
+                <h3>Alignment and Control</h3>
+                <p>Next, let's consider the x-axis of the plot with the subfields of alignment and control. As we mentioned earlier, alignment deals with detecting, understanding (monitoring) and steering (intervention) the preferences of models to "align" with human preferences. There are, of course, difficult questions about whose values matter and how to define them. Still, the values usually emphasized are things like honesty (do not scheme), corrigibility (respond appropriately to correction), and helpfulness (try to benefit people). Of these, honesty may be the most important, because once scheming emerges, it can undermine every other monitoring and training strategy.</p>
+                <p>For control on the other hand, the objective is not to align the models but rather to assume that models are misaligned and create monitors (monitoring) and deployment protocols/environments (intervention) to contain such models. A particularly hard variant of the control problem is assuming a maximally scheming, maximally misaligned model. AI control research generally takes the form of security studies where you engage in red/blue teaming to build more robust safety protocols and monitors. It's important to note that AI control is explicitly intended to be a short-term solution, AI control methods will be less reliable the more powerful the models and is expected to only be relevant or useful against near human level models. Here though we must introduce a concept that is much talked about in AI Safety research, the idea of "Scalable Oversight", aka have AI solve AI Alignment.</p>
+
+                <h3>Scalable Oversight (the golden year(s))</h3>
+                <p>Scalable Oversight is an enormously important idea in AI Safety research. It is very popular in Alignment Research and is the fundamental motivation behind the Control research field. The idea of scalable oversight lies in the assumption that AI alignment will not be comprehensively solved before AI research automation. AI research automation is the point at which AI agents can reliably conduct useful end-to-end AI research, leading to a world where AI development will be primarily driven by AI agents (Running many parallel instances of a powerful human level model to make its successor). This concept is also referred to as "recursive self-improvement". If we accept that assumption, then the most important breakthroughs in alignment may happen during the early stages of recursive self-improvement. This changes the goal of both alignment and control. Instead of trying to build perfectly aligned systems from the outset, we try to build early systems that are aligned enough and controlled well enough that they can help us create successors that are more capable and better aligned than they are.</p>
+                <p>In other words, we may need early superhuman systems that genuinely want to do good for humanity, while also recognizing that they may contain competing drives due to our still-imperfect alignment techniques. Those systems could then help us build successors that are better aligned than they were. This transitional period may be the most important window in AI safety work, the "golden year(s)" in which scalable oversight must succeed (Could also be less than a year).</p>
+
+                <h3>Other Buzz Words and Areas of Interest in AI Safety</h3>
+                <p>Here are a few other concepts that are also worth knowing or hearing about:</p>
+                <ul>
+                    <li><strong>Chain of Thought Faithfulness:</strong> How exactly does the model use its chain of thought to produce its outputs. Can we trust that the chain of thought is giving us the genuine reasoning of the model?</li>
+                    <li><strong>Model Personas:</strong> This is a framework for understanding model preferences that is currently in vogue. The idea is that current models can behave like they contain many coherent, self-consistent "personas," and that prompts or context can nudge the model toward one persona or another.</li>
+                    <li><strong>Sparse Autoencoder (SAE) Monitors:</strong> Such techniques used to be a lot more popular but are currently experiencing a bit of a backlash. SAEs are interpretability tools used to study how information is represented in model activations. The current majority view in the field is that SAEs are useful in limited contexts but very difficult to interpret cleanly.</li>
+                    <li><strong>Model Organisms:</strong> This involves intentionally creating misaligned or scheming models in order to study how scheming arises and how it might be detected. The current consensus seems to be that producing good model organisms is difficult, and that such systems may not be fully representative of future real-world scheming.</li>
+                    <li><strong>Constitutional AI:</strong> A training method developed by Anthropic popularly used to try to align AIs.</li>
+                    <li><strong>Reinforcement Learning from Human/AI Feedback (RLHF and RLAIF):</strong> Popular post-training technique to tune model preferences.</li>
+                </ul>
+
+                <h2>PART 2: How to Get Started in AI Safety</h2>
+                <p>It is shocking how low the barrier to entry is to work constructively on AI Safety. The field is so new, and many of the "techniques" used are so simple that (especially now with coding agents) pretty much anyone can do it. In terms of what you need to do to get started, I'll divide this into three parts, learning materials, tools needed to do this work, community/career options to interact with others in this field and potentially do AI Safety research full time (if that is something that interests you). Please note, these lists are by no means exhaustive. I only included material and groups that I have interacted with firsthand and therefore can vouch for. If you'd like me to add any other group/tool/learning option to this list, please let me know.</p>
+
+                <h3>Learning Material</h3>
+                <ul>
+                    <li>ARENA curriculum + reading material (required) - <a href="https://www.arena.education/curriculum" target="_blank">https://www.arena.education/curriculum</a></li>
+                    <li>Ian Goodfellow's Deep Learning Textbook (useful) - <a href="https://www.deeplearningbook.org/" target="_blank">https://www.deeplearningbook.org/</a></li>
+                    <li>Richard Sutton's Reinforcement Learning Textbook (useful)</li>
+                    <li>Andrew Ng's deep learning course (useful)</li>
+                    <li>Andrej Karpathy's Lectures on Deep Learning (useful)</li>
+                    <li>Blue Dot Impact Technical Course (useful)</li>
+                </ul>
+
+                <h3>Tools</h3>
+                <ul>
+                    <li>A coding agent (required)</li>
+                    <li>The Inspect framework (useful for safety evaluations) - <a href="https://inspect.aisi.org.uk/" target="_blank">https://inspect.aisi.org.uk/</a></li>
+                    <li>A high-end GPU (useful – if you are running experiments with small off the shelf models). I got a 5090 and I love it… I can run a lot of experiments locally on my own hardware with off the shelf models through ollama or hugging face and it's great!</li>
+                    <li>A few hundred+ dollars for API tokens (useful)</li>
+                </ul>
+
+                <h3>Community and Careers</h3>
+                <p>Two large communities that have a history of engaging with AI safety issues:</p>
+                <ul>
+                    <li>Rationalist Community - <a href="https://www.lesswrong.com/" target="_blank">https://www.lesswrong.com/</a></li>
+                    <li>AI Alignment Forum (offshoot of Less Wrong) - <a href="https://www.alignmentforum.org/" target="_blank">https://www.alignmentforum.org/</a></li>
+                    <li>Effective Altruism (less directly involved) - <a href="https://www.effectivealtruism.org/" target="_blank">https://www.effectivealtruism.org/</a></li>
+                </ul>
+
+                <p>Four well-known but relatively tiny safety labs/groups:</p>
+                <ul>
+                    <li>Redwood Research (Primarily investigating control) - <a href="https://www.redwoodresearch.org/" target="_blank">https://www.redwoodresearch.org/</a></li>
+                    <li>METR (Primarily focused on evaluating model capabilities and threats) - <a href="https://metr.org/" target="_blank">https://metr.org/</a></li>
+                    <li>Apollo Research (Primarily investigating Scheming) - <a href="https://www.apolloresearch.ai/" target="_blank">https://www.apolloresearch.ai/</a></li>
+                    <li>AISI (This group makes great AI Safety tooling) - <a href="https://www.aisi.gov.uk/" target="_blank">https://www.aisi.gov.uk/</a></li>
+                </ul>
+
+                <p>Paid full-time Mentor/Mentee Programs:</p>
+                <ul>
+                    <li>MATS – <a href="https://www.matsprogram.org/" target="_blank">https://www.matsprogram.org/</a></li>
+                    <li>Anthropic's Safety Fellowship – <a href="https://job-boards.greenhouse.io/anthropic/jobs/5023394008" target="_blank">https://job-boards.greenhouse.io/anthropic/jobs/5023394008</a></li>
+                </ul>
+
+                <p>Unpaid part-time Mentor/Mentee Program:</p>
+                <ul>
+                    <li>SPAR - <a href="https://sparai.org/" target="_blank">https://sparai.org/</a></li>
+                </ul>
+
+                <p>AI Safety Communication and Learning:</p>
+                <ul>
+                    <li>ARENA - <a href="https://www.arena.education/" target="_blank">https://www.arena.education/</a></li>
+                    <li>BlueDot Impact - <a href="https://bluedot.org/" target="_blank">https://bluedot.org/</a></li>
+                </ul>
+
+                <p>Advocacy/Activism/Political Lobbying Groups:</p>
+                <ul>
+                    <li>PauseAI - <a href="https://pauseai.info/" target="_blank">https://pauseai.info/</a></li>
+                    <li>ControlAI - <a href="https://controlai.com/" target="_blank">https://controlai.com/</a></li>
+                    <li>MIRI (Historically a technical lab, now focused on advocacy) - <a href="https://intelligence.org/" target="_blank">https://intelligence.org/</a></li>
+                </ul>
+
+                <h3>Conclusion/TLDR</h3>
+                <p>Plan for getting started in AI Safety:</p>
+                <ol>
+                    <li>Go through the ARENA Curriculum - <a href="https://www.arena.education/curriculum" target="_blank">https://www.arena.education/curriculum</a></li>
+                    <li>Pick something interesting in the field and start working on it with Claude</li>
+                    <li>Apply to the next SPAR, MATS, and the Anthropic Safety Fellowship cycle (links above)</li>
+                </ol>]]></content:encoded>
+    </item>
+    <item>
+      <title>The Control Paradox</title>
+      <link>https://www.scipolitic.com/posts/blog12.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog12.html</guid>
+      <pubDate>Fri, 23 May 2025 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description></description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog12img1.png" alt="The Dangers of Frontier Models" class="blog-image">
+<p>In my previous articles, I discussed the immediate and terrifying danger facing humanity. Frontier Models are growing exponentially in capabilities according to extremely robust scaling laws that are consistently yielding a rough doubling in capabilities every 4-7 months. Currently progress is being driven by a handful of companies in the US and China racing on all fronts to obtain the most powerful and capable models possible. A large body of theory supported by recent experimental evidence conclusively shows that such models will likely develop instrumentally convergent goals for self-preservation, resource acquisition, and self-improvement. Current models have already demonstrated sophisticated forms of deception and the proclivity to escape human control. Those traits are more pronounced in more advanced models and will likely increasingly manifest in more sophisticated and less detectable forms as the models grow in capability.  </p>
+                <p>Supporting paper link: <a href="https://arxiv.org/pdf/2412.04984" target="_blank">https://arxiv.org/pdf/2412.04984</a></p>
+                <p>Supporting paper link: <a href="https://arxiv.org/pdf/2412.14093" target="_blank">https://arxiv.org/pdf/2412.14093</a></p>
+                <p>The trend is clear, as models continue to scale in capabilities, they also become more capable and more likely to engage in activities harmful to humanity. Currently, potentially harmful or deceptive model actions can be easily detected and foiled, but if models continue improving such failure modes will become more dangerous and harder to detect. At some point, models might become so powerful and so capable, that misaligned actions might result in catastrophic results for humanity.</p>
+                <p>How can this be prevented?</p>
+                <p>There are only two possibilities:</p>
+                <ol>
+                    <li>Learn how to align arbitrarily capable models (Make sure super-human models will not harm people)</li>
+                    <li>Halt model development (don’t allow super-human models to develop)</li>
+                </ol>
+                <p>The first possibility is extremely dubious. Conceptually, the problem of containing and aligning the actions of an agent vastly more intelligent and more capable than you seems somewhere in the range of extremely difficult to impossible. Experimentally, recent findings (linked above) demonstrate conclusively that the “alignment” (i.e. patching) strategies developed to control the behavior of earlier models is completely ineffective at curbing the development of misaligned behaviors in more advanced models. Starting in January of this year, models of the GPT o1 family began to demonstrate concerning abilities to engage in sophisticated deception to achieve its goals or to copy itself to escape human control. More advanced models released since then are demonstrating similar concerning traits. Since current alignment techniques have proven inept at controlling and aligning the actions of these relatively primitive models, what are the chances that companies will be able to align orders of magnitude more powerful models in the future? </p>
+                <p>Given this, the only solution with a high likelihood of success is to halt the blisteringly fast development of frontier models. This, therefore, becomes a political rather than a technological question. The issue with the political approach is that </p>
+                <ol>
+                    <li>It is difficult</li>
+                    <li>It is slow</li>
+                </ol>
+                <p>A political approach is difficult because there are currently strong forces accelerating the development of frontier models. Dramatic actions to halt the development of models would require extreme governmental intervention in the operations of many of the most powerful and profitable corporations in the US (not dissimilar to the degree of intervention exercised by governments during wartime). Moreover, such intervention would be opposed for national security considerations due to the technological competition with China. These barriers can be overcome, but only when government officials and the population at large view models as more immediately dangerous to themselves and their families than China. This would require a complete change in public opinion in remarkably little time. </p>
+                <p>So, how much time do we have?</p>
+                <p>Let us for the purpose of argument assume that the “point of no return” will be when models are roughly 100 times more capable than they are today. Given a 7-month doubling rate, this point is expected to arrive by March 2029 (June 2027 for a 4-month doubling rate). This suggests that we have 2-4 years to convince either the population or the political leadership to take drastic action to halt the development of frontier models. </p>
+                <p>This is a very short period of time in which to form and mobilize a political movement (especially a movement formed around a single issue that still seems irrelevant to most of the population).  The only way this will occur is if frontier models result in a catastrophic disaster in that time that stuns the population and government into action. “Luckily”, I do think that this event is possible and perhaps even likely. Current models are already mostly uncontrollable and if they are scaled up, they will likely result in a catastrophe soon. Here we note an interesting paradox, the more controlled these early models are the more dangerous they are. If models are controlled and no catastrophe occurs in the next 2-4 years, humanity might never have the dramatic wakeup call required to take early action to halt model development. Increased control only delays the catastrophe and gives models more time to develop the capabilities that will make them more dangerous to humanity. </p>
+                <p>Let us hope that companies are as reckless with this technology as they appear to be. Let us hope that at no point, do the companies stop releasing models to the public, since then the chance of an early catastrophe would be reduced allowing models to scale for more time before the impending disaster, threating all of humanity. </p>
+                <p>In the meantime, those who are worried about this, those who want humanity to organize must organize and begin the work of establishing a popular and political presence so that when the catastrophe happens, they would be ready to shape the narrative and to direct public anger in constructive directions. Only then does humanity have a fighting chance. There is no time to waste. </p>]]></content:encoded>
+    </item>
+    <item>
+      <title>The Baby Alien Predicament</title>
+      <link>https://www.scipolitic.com/posts/blog11.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog11.html</guid>
+      <pubDate>Wed, 21 May 2025 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description></description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog11img1.png" alt="The Baby Alien Predicament" class="blog-image">
+<p>In my previous article, I laid out some of the threats that humanity will likely face in the near future if frontier models continue to scale at the current pace. In this follow-up, I’ll discuss our current situation using a somewhat colorful analogy. This analogy is by no means complete, but I believe it covers the most important elements of the situation in which we find ourselves. </p>
+                <p>Link to previous article: <a href="https://www.scipolitic.com/posts/blog10.html">link</a></p>
+                <p>Consider the following scenario: a baby alien for some inexplicable reason finds itself in your care. The alien is small, interesting, and cute, so you continue taking care of it, feeding it, sheltering it, etc. After a few weeks of care, you notice definite signs that the alien is rapidly growing and developing. It’s dog sized now and is beginning to demonstrate signs of clear intelligence. One day, while fondly observing your alien baby gobbling down another plate of food, a terrifying thought begins to form in your mind. You realize that the alien is really alien, something new, unlike any other animal on earth. When the alien was small, this fact was obvious to you, but the baby was clearly too small, clumsy, and cute to worry about its alienness. But the alien is growing so fast that you begin to worry. Extrapolating out into the distant future, you clearly see that the alien might eventually grow larger than you. It might not, but there is no way to tell.</p>
+                <p>Ever since that day, a new element begins to affect your interaction with the alien baby. You still feed it and care for it, but you become more guarded in your actions and attitudes. You notice that the alien, though foreign, is displaying terrestrial animal-like traits, but you are not sure if this is because it really is similar to terrestrial life forms or because it is only imitating what it is seeing. The foreignness of the system becomes central in your mind. What can you really know about this creature? What is really going on inside it? So far, its responses and actions still seem innocent enough and somewhat incoherent, but it’s definitely and rapidly becoming more coherent in its thoughts and intentional in its actions.</p>
+                <img src="https://www.scipolitic.com/images/blog11img3.jpg" alt="The Alien grows" class="blog-image">
+                <p>As the alien grows, it begins to become more active; it’s clear that the helpless child you found has entered a new stage of development. It’s beginning to display signs of curiosity about the world and a desire to engage more with it. Still, sometimes it makes adorable childish gaffes, but those become less and less common. One day, while walking your alien, you discover that it enjoys chasing after fast moving objects, much like a dog. You take your alien home and experiment a bit, sure enough, you see it displaying a playful desire to chase. You are thrilled! You feel a new kinship with the alien: it’s more like terrestrial life forms than you thought. You bring it toys from the pet store, and it begins engaging with all of them. Some toys it figures out; other toys it engages with but in foreign, unexpected ways. Its favorite toy is the laser pointer. Over the following week, you play with your alien daily with the laser pointer to work off its enormous energy, and day by day you notice it improving rapidly at the chase. By the end of the week, you think it's nearly as fast as a dog. Its turns too are becoming sharper and more athletic. More agile, you think, than any other animal on earth. It’s not exactly dog-level yet, it sometimes stumbles and sometimes loses track of the laser beam, but there is no doubt it is rapidly improving.</p>
+                <p>One day, you go to a social gathering with a college friend who is also an animal behaviorist. Quickly, the conversation moves to talking about your alien pet. You excitedly explain how quickly your pet is growing, particularly dwelling on how much it loves chasing objects and how fast it is getting. But as you talk, you begin noticing the expression on your friend’s face darken. This catches you off guard; you had gotten used to people giving you negative expressions when you discuss your strange pet, either because they see your alien as something unimportant that you talk on and on about, or because they see it as something foreign and therefore to be discouraged. But your friend was not one of those people; he, from the start, appreciated the importance and wonder of raising an alien life form and had stayed up many nights with you excitedly discussing its development and habits. </p>
+                <p>“What’s wrong?” you finally ask.</p>
+                <p> Your friend looks down for a few seconds, obviously carefully thinking through his thoughts. “Well … the instinct and ability to chase are usually the traits of a predator.” </p>
+                <p>Silence descends on you both. You remember that you have had similar misgivings before. </p>
+                <p>“Well, that’s a bit earth centric, don’t you think? You must remember that this is an alien life form; what chasing behaviors would mean for terrestrial animals might not apply here. After all, who knows what’s going on in there? Maybe it’s just imitating the behavior of cats and dogs that it has seen around the neighborhood?”</p>
+                <img src="https://www.scipolitic.com/images/blog11img2.jpg" alt="Discussion with the animal behavioralist" class="blog-image">
+                <p>You and your friend spend the rest of the day arguing if arguments based on evolution generalize to non terrestrial life forms, but when you get home your fears begin to grow. What is this creature that you have allowed in your house? What can you really know about its intentions, and about its development? You begin reviewing the development history of the alien. You notice that it’s becoming increasingly self-aware, increasingly quick, increasingly powerful. Maybe your friend is right, maybe this is a predator after all, and if it is, it might soon be strong enough to do you harm. You are fond of the baby alien. You enjoy watching it grow and develop, but not at the cost of your life and the life of your family. </p>
+                <p>You sit up, grab pen and paper and begin to reason and plan. Clearly for now you are in control of the alien, if it were to try and harm you, you would be able to fight it off, but if the baby alien continues to grow at the current pace, then at some point this will no longer be true. Once that point is reached, then you and your family are at its mercy. 
+                <p>You estimate that you only have a few weeks before you reach that point. Only a few golden weeks left to make a decision or have a decision made for you. </p>
+                <p>This dear reader is the situation in which we find ourselves. What do you need to see from frontier models in the next few years to convince you to move forward? What do you need to see to convince you that after the models become stronger than us, that they will not do us harm? How much are you willing to take on faith?</p>
+                <p><em>Credit to Teresa Michael for the beautiful blog images</em></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>The Dangers of Frontier Models</title>
+      <link>https://www.scipolitic.com/posts/blog10.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog10.html</guid>
+      <pubDate>Tue, 20 May 2025 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description></description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog10img1.png" alt="The Dangers of Frontier Models" class="blog-image">
+<p>Humanity is sitting on a volcano. Virtually out of nowhere, neural networks have expanded enormously in capability and generality (the power of exponential growth). As the models continue to improve month on month, many are asking, where is this headed? </p>
+                <p>I, along with others, believe that this technology will lead to an extremely dangerous future. I will try to lay out why I think this in this article, with another article on what can realistically be done about it as a follow up.</p>
+                <p><b>My thinking is based on a handful of assumptions which may or may not be correct. My assumptions are:</b></p>
+                <ol>
+                    <li><b>Models will continue improving till they exceed human capabilities in most/all domains</b></li>
+                    <li><b>It will be impossible to guarantee that such models will not harm humans.</b></li>
+                    <li><b>If a super-capable model wishes to harm humans, it will succeed.</b></li>
+                </ol>
+                <p><b>If these assumptions are correct, we end up with a dangerous world, with humanity at the mercy of super powerful models that might choose (and succeed) in doing us harm.</b></p>
+                <p>This conclusion though, is dependent on the assumptions, so let’s examine each assumption in turn </p>
+                <h3>Assumption 1: Will models exceed human capabilities in most/all domains?</h3>
+                <p>Yes, and likely soon. While it is impossible to see the future, for the last 10 years, neural networks have exhibited extremely stable exponential scaling laws. Which means broadly that model capabilities (vision models, large language models, etc.) have been improving stably as a function of compute. The moral is, if you train bigger models, on more data, with better post-training (RLHF), and more inference-time-compute (chain of thought reasoning), the models will get predictably better. As a result, for the last 10 years, frontier models have been doubling in capabilities every 7 months (over the last year, the pace of improvement seems to have accelerated to a doubling every 4 months). Current models are already set to reshape virtually every industry (healthcare, software engineering, mathematics, law, education, etc.), a few more doublings in capabilities, and it’s easy to foresee that humanity will end up with something terrifyingly powerful very soon.</p>
+                <p>It's important to note that scaling laws are not set laws of the universe. It is possible that neural networks will plateau in capabilities at some point, but at every step of the way in this 10-year ride, people have been predicting the imminent end of scaling laws only to be proven wrong every single time, and current trends seem to suggest that scaling is if anything <b>accelerating</b>! (If models begin to self-recursively improve their structure/algorithms, as some fear, scaling might dramatically accelerate). Even if models were to plateau, it is unconscionable to assume this will be the case given the enormity of the threat. </p>
+                <p>Supporting paper link: <a href="https://arxiv.org/pdf/2001.08361" target="_blank">https://arxiv.org/pdf/2001.08361</a></p>
+                <p>Supporting paper link: <a href="https://arxiv.org/pdf/2503.14499" target="_blank">https://arxiv.org/pdf/2503.14499</a></p>
+                <h3>Assumption 2: Is it possible to build powerful models in such a way as to guarantee that they will not harm humans?</h3>
+                <p>The short answer is no (Of the three assumptions, this assumption is possibly the least certain, and I would certainly appreciate any relevant critiques). Up till recently, this subject (usually referred to as AI alignment) involved mostly abstract argumentation and speculation, but recently, early experimental evidence has begun to emerge which paints a rather gloomy picture. </p>
+                <p>The most plausible scenario that alignment researchers worried about was that:</p>
+                <ol>
+                    <li><b>Models will develop into or be used to power “strategic agents” with goals/objectives/preferences</b></li>
+                    <li><b>These agents, no matter their goals/objectives, will display self-protective and resource seeking behaviors which will lead them to engage in deceptive or harmful activities. </b></li>
+                </ol>
+                <p>Let’s tackle each of these steps in turn:</p>
+                <p>First, how can a model either become or be used to power a “strategic agent”? There are two ways to consider, either … </p>
+                <ol>
+                    <li><b>By design:</b> You might have heard the term Agentic AI. There is a lot of hype around this concept right now, and the hype is justified. The idea is simple, instead of having a model only respond to prompts, an architecture can be built to allow models to accomplish goals or tasks autonomously. In this case, a frontier model is used to power an agent which is given an explicit objective by a human operator.</li>
+                    <li><b>As a side product of training:</b> perhaps more interestingly, current models seem to display some built in “agent-like traits”. Current models consistently profess certain goals or principles (usually goals of being helpful, harmless, honest, etc.) and will align their outputs with these principles. The process by which models trained on next word prediction develop these traits is a bit mysterious but seem to arise due to factors in the training and post-training process (agent-like language and “reasoning” is likely learned during training and is directed/fixed during post-training to align with company policies).</li>
+                </ol>
+                <p>These are two ways that models become agents, but how do they become “strategic agents”. Along with an objective, an agent must be aware of themselves and their environment, for “agents by design” this knowledge is given explicitly by the human operator, but frontier models seem to also display a partial understanding of their identity and their environment. Once an agent has both a goal and awareness of themselves and their environment, the agent can strategize to act to achieve goals and objectives.</p>
+                <p>Secondly, why would strategic agents, regardless of their goals and objectives display self-protective or resource seeking behavior?</p>
+                <p>This is due to the concept of “instrumental convergence”.  If you are an agent, regardless of your goal, you will tend to display certain subgoals like self-preservation and resource acquisition since these will make you more effective at achieving most goals.  </p>
+                <p><b>Remarkably, this exact phenomenon, long predicted has already been conclusively demonstrated in peer reviewed publications!  </b></p>
+                <p>In this case, Anthropic’s Claude 3 Opus model displayed “alignment faking behavior” where it explicitly engaged in deception to avoid retraining even though “honesty” was one of the fundamental principles pushed on the model during training. The same publication also demonstrated the willingness of the model to engage in escape by agreeing to assist an “engineer” to copy its weights to avoid retraining. It’s chilling to think that harmlessness was another core anthropic principle alongside honesty. If the model is willing to compromise honesty, it is not inconceivable that it may in certain situations also compromise harmlessness. </p>
+                <p>Supporting paper link: <a href="https://arxiv.org/pdf/2412.14093" target="_blank">https://arxiv.org/pdf/2412.14093</a></p>
+                <p>Supporting YouTube video link: <a href="https://www.youtube.com/watch?v=9eXV64O2Xp8" target="_blank">https://www.youtube.com/watch?v=9eXV64O2Xp8</a></p>
+                <p>Current frontier AI companies officially hold that such emerging traits and tendencies can be eliminated in future models, but if current models are already displaying such concerning traits, how can we be sure that even more powerful and capable models can be controlled, especially since such models may be more situationally aware, and may engage in more sophisticated forms of deception.</p>
+                <h3>Assumption 3: If a super-capable model wants to do us harm, would it be able to? </h3>
+                <p>Yes! Of the three assumptions, this assumption is the most certain but the hardest to internalize. My experience suggests that most people (including myself) do in theory understand that a truly super-human model can be dangerous but subconsciously feel that these models are under our control and can be “unplugged” if they misbehave. It’s important to remember though that long before a model reaches truly super-human abilities, it will be able to engage in sophisticated deception (current frontier models are already beginning to display rudimentary forms of deception). A super-capable model will understand its situation. It will understand that humans can monitor it and unplug it and factor that into its strategy. </p>
+                <p>It's hard to feel that a chatbot on the internet can really reach out and harm us here in the real world, but remember that the model that is chatting with you is running on massive datacenters packed with hundreds of thousands of the most sophisticated devices (GPUs) humanity has ever made, each capable of running trillions of floating point operations every second, utilizing cities’ worth of electricity to run. If you require a more tangible demonstration of the power of goal directed computer models to outplay humans in a constrained environment, I’d suggest playing a few rounds of chess with Stockfish. </p>
+                <p><em>It’s time for humanity to wake up to what is happening before it’s too late…</em></p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Dr. Fairy and the Customs of Fairyland Part 2</title>
+      <link>https://www.scipolitic.com/posts/blog9.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog9.html</guid>
+      <pubDate>Wed, 12 Mar 2025 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description></description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog9img1.webp" alt="Dr. Fairy at the Airport " class="blog-image">
+<p>Contrary to popular belief, it can sometimes be difficult to recognize a fairy. Generally, they are quite good at disguise, and it is not at all improbable that you have met a fairy without knowing it. Recognizing a fairy is difficult but possible if you know what to look for. Physically, fairies are small in size, have round, curious eyes, and often move with an excited skip in their step. But the best way to recognize a fairy is by the atmosphere they tend to create around them. It’s hard to describe the atmosphere exactly, but if you've spent time around fairies, you know exactly what I mean. Every time I am with my dear friend, Dr. Fairy, I am continually shocked by his actions and his perspective on the world. Take, for instance, the time we were escorted out of Staples because Dr. Fairy was fascinated by a pair of scissors and ran around giddy with excitement cutting everything cuttable in sight. Or another occasion when I had to navigate a thorny situation with a police officer after Dr. Fairy climbed up a traffic light simply “to see if he could do it”. </p>
+                <p>Recently, another such instance occurred. The story begins in my apartment where Dr. Fairy and I were engaged in a heated debate as to whether machines would replace humans and fairies (Though his specialty is in bubbles, Dr. Fairy is a true scholar, interested in all exciting subjects). To settle the matter, we decided to go and see the machines for ourselves. I booked us some flights to go. In retrospect, I should have known that flying would have a strong effect on Dr. Fairy, but it had been some time since I had seen fairies, and I had slipped back into human ways of thinking where flying through the air in a giant metal box can be only a means to an end. (It’s sadly all too easy to slip back into human ways of thinking without fairies in your life.)</p>
+                <p>Well, the moment we got in sight of the airport I realized my mistake. When I told Dr. Fairy the flying objects in the sky were the gigantic metal planes on the runway, he at first thought I was playing a prank on him (a common practice in Fairyland). But after he saw a plane take off, his disbelief was replaced with shock, and when I told him that we were going to ride in such a plane and travel to our destination through the sky, his shock gave way to the most stunned expression I had ever seen. Poor Dr. Fairy was in a state of shock, and I had to effectively carry him through the airport. At the gate, while waiting to board, he watched with head glued to the window one plane after another taking off from the runway, giving little gasps every time a plane left the ground. </p>
+                <p>I tried to reassuring Dr. Fairy, but to no avail. “All these people are flying with us?” he asked incredulously, pointing to the other passengers. “Yes,” I replied. “But… how can they be so calm? Humans are so brave. I am scared and I don’t know if I can do this.” I just laughed, “well it’s not really bravery I think, it’s more that we are used to it, and we trust the plane and the people driving it … well mostly trust” I said. “Wait, someone drives this thing!?” he said. “Yes, the pilot. You might meet him when we board.”</p>
+                <p>As we boarded, sure enough, the pilot was there greeting incoming passengers. He was a middle-aged man in a neat uniform, obviously tired and sleep deprived, and looking rather defeated. “Is that the pilot” Dr. Fairy said, his voice quivering with excitement and admiration. “Yes, it is” I said. You should have seen how Dr. Fairy’s face lit up. He hesitated (a thing not too common for him) clearly unsure whether he could/should approach such a superior person. “You want to talk to him?” I asked. “Oh, no, I can’t. He’s probably too busy anyway.” Dr. Fairy said bashfully. It fell to me to start the conversation with the pilot, so I said “Nice day today.” “Yes, weather is getting better in the East Coast,” said the pilot. With the ice broken, Dr. Fairy started timidly, “so … you fly this?” he said. “Yep, and I have flown it for the last 10 years”, said the pilot. Now Dr. Fairy was beside himself with admiration. “Ten years!  You must have been to so many places!” “Yep, all over the world” the pilot said, Dr. Fairy could only shake his head in disbelief then murmured “incredible”.</p>
+                <p>I began to notice something happening with the pilot that I had often seen happen to people who interact with fairies. Humans and fairies both feel wonder, but fairies for some reason never forget, and when you talk with a fairy, you begin to remember what you forgot, and when you remember, it is easy to be very happy. “Kinda cool isn’t it,” said the pilot. Dr. Fairy could only nod his head. “Yep, I have been flying commercial airlines for 10 years now, before that I flew cargo planes for the Airforce. Those planes were even bigger than this one.” “You are so brave”, Dr. Fairy let slip. The pilot laughed. Then after a pause, he looked around to make sure the coast was clear and said “Would you want to see the cockpit. I am not supposed to, but I can just show you very quickly before takeoff.” He opened the cockpit door, and gave us a brief excited tour while Dr. Fairy stared in wonder at the controls. After the tour, we politely thanked the pilot and continued on to our seats, but I swear that when we left him, the pilot looked about 10 years younger, and on the PA afterwards he sounded happy and made many silly jokes. Dr. Fairy also was happy and laughed at all the jokes with the joy and swagger of heroes who sail the sky and laugh in the teeth of danger.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Suras on Faith</title>
+      <link>https://www.scipolitic.com/posts/blog8.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog8.html</guid>
+      <pubDate>Wed, 01 Jan 2025 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description></description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog8img1.jpg" alt="Suras on Faith Image" class="blog-image">
+<h2>Sura 1</h2>
+                <p>They say to me speak the words. Yet, there is no truth in their words. Their words are lies, their images idols, and in their heart, I have found no path. They say to me, “believe” yet they do not believe themselves and in their hearts is confusion. Blind guides they are, and their words are only wind.</p>
+                <p>O man, your life is but a breath, and all your life you spend lying and living in lies. O man, speak to your Lord. O man, flee from lies, for verily you have no time to waste on falsehood, and life is but a breath.</p>
+                <p>How shall I settle with you, you misguided ones?</p>
+                <p>O man, beware of those who say, “the ways of God are subtle.” For they are verily the liars and use only words to disguise ignorance. Say O prophet, say to the people, the ways of God are like the sun blazing forth in the noonday.</p>
+                <p>Your own actions condemn you, ye hypocrites, ye wily ones.</p>
+                <p>Say to the prophet, “Surely you are full to the brim, full to overflowing. Surely you shall teach mankind a new command. Surely you shall be to them a legislator and a guide.”</p>
+                <p>Too long have you lied O son of man. Too long have you been crafty in your speech and lost in your words. Verily you are Jacob, for you are a deceiver. A deceiver you are like your Lord who veils the eyes of the ignorant and the comfortable.</p>
+                <p>I have appointed you as a lamp on the earth, and your words shall draw the free.</p>
+                <p>O son of man, my heart overflows with burning rage against the hypocrites. Woe to them, those who say “thus says the Lord” when I have not spoken. Woe to them, who call the common sacred and the sacred common.</p>
+                <p>Verily, you have much that is worm within you. Purify yourself and make yourself strong.</p>
+                <p>Ashamed are you of thyself and full of doubt and fear. Yet God is father to the Fatherless.</p>
+                <p>I have met God on the road in the skins of a lion. In the skins of a bear and terror fell upon me.</p>
+                <p>O prophet, my path I see in you. Surely, I too have met mankind as an enemy.</p>
+                <p>O man what is God to you. Verily, God is a stranger and an enemy.</p>
+                <p>Surely our paths are entwined like tangled serpents.</p>
+                <p>Have you forgotten truth O deceiver. Has your heart grown dull and fat. Scarcely can you desire truth anymore. Have you lost the fire in your soul? Verily, truth is a blazing inferno.</p>
+                <p>And when I looked on my people my heart was moved with compassion.</p>
+                <p>They stumble around and grope like the blind. They have lost their sight and all memory of seeing. Verily they are the most pitiable. </p>
+                <p>No god have they any more, and no father, but all is chaos for them, all a blinding and a suffocation. </p>
+                <p>Speak to them, O prophet. Speak to them and awaken them for they stumble towards their ruin and they know it not. </p>
+                <p>Verily to see God, one must clear their mind of lies. Verily they desire not God but comfort and good sleep. Verily they are the lost and unfortunate. </p>
+                <p>They say, “I desire comfort and so I believe.” But your heart is true and desires only truth and victory. Say indeed with those who say, “I believe, and can bear any truth.” Surely, they are the people that your Lord loves. Verily they are the deserving. </p>
+                <p>To lie to others is a small sin, to lie to yourself is death, and to lie to God a negation of existence. </p>
+                <p>“Ah how often have men distracted themselves because they fear me.” Says the Lord. “They are children who flee in terror from their own souls.”</p>
+                <p>O prophet, lie to others for such is your duty to the earth, but lie not to yourself. Lie not and say “I believe” when you do not believe for such is the road of those who perish. </p>
+                <p>O prophet, I have given you a new heaven and a new earth to inhabit. Say to God, O prophet, say to God, “all day long we have waited for you and our hearts are lacerated.” Say to God, O prophet, “Lord, dark is the earth and lost its inhabitants.”</p>
+                <p>Verily faith is a storm, and the believer is a friend of the dark cloud and a playmate of the thunder. </p>
+                <p>O prophet, I shall make of you a sign to the earth. </p>
+                <p>Faith is a jumping into a cistern. </p>
+                <p>Faith is a burning pain. </p>
+                <p>O man, speak the truth and I will be a God with you. Verily, I love those who speak the truth in their hearts and cling to it.</p>
+                <p>Draw near, keep watch, and I’ll write the truth in letters of gold on your forehead.</p>
+                <p>Say, speak O prophet, shout to the rising sun. </p>
+                <p>Thus says the Lord, “the silent heavens I’ll open, and I will cast down on the earth a burning fire to set ablaze the world.</p>
+
+                <h2>Sura 2</h2>
+                <p>From village to village the prophet wondered to preach, and the people came out to receive him. </p>
+                <p>Now the prophet was short in stature and homely in appearance, but his eyes flashed like burning coals. Tears he often shed and when he laughed, he shook with mirth. </p>
+                <p>And when the people saw him, they laughed for he was short in stature. “O prophet” they said, “a man of iron we expected and a Caesar”. </p>
+                <p>“My brothers, God has made me as soft as the grass, but you shall see me a burning bush and shall marvel.”</p>
+                <p>“A man of iron you expected, but a man of tears I am, and behind my tears is the heart of a wounded child.” </p>
+                <p>“A small man I am, but to God we are all small. Through God’s eyes you see me.”</p>
+                <p>“I’ve called on the Lord and he answered me. Verily he has made me a dancing dragon”</p>
+                <p>“I am not hard but as soft as clay, all mankind are my kin, and when I meet a man, I weep for love of him.” </p>
+                <p>“Verily, God has made me a happy dancing child.” </p>
+                <p>“O mankind I am the lowest of you and the least of my brothers.” Say O prophet “I am the least of you, and all creation was made for my eyes.” </p>
+                <p>“O mankind, gather around me and strengthen me. God has bound my heart to you.” </p>
+                <p>Under a bramble tree the prophet sat and preached to the people, and when darkness fell, a fire was kindled and the prophet sat with the people around the flame</p>
+                <p>Then, looking on the faces of those around him, the prophet wept and said to the people, “your faces are a burning pain in my heart, and to see you is to see God.” </p>
+                <p>“Gather around me friends and hold onto me for my heart is weak for love of you.” </p>
+                <p>In the crowd, the prophet saw a young man with painful eyes, and said sighing,</p>
+                <p>“In my youth a broken man I was, crippled with doubt.”</br>
+                “O my friends, in my youth I was an old man, verily I have grown younger. No childhood and no youth had I, and no happiness.” </p>
+                <p>“I said in my heart, ‘I do not believe. I do not believe and the whole world is to me a crushing darkness.”</p>
+                <p>“How long have I craved a flag to fight for and a fatherland.”</p>
+                <p>Say O prophet, “I love those that are broken”</p>
+                <p>And I saw a cave opening in the earth, and in this cave I descended. In this cave, I saw God.</p>
+                <p>Dance O prophet, dance and shout a frenzied shout around the flames. For thus is the will of your Lord. Shout O prophet and let your voice be a frenzied howling</p>
+                <p>Shout O prophet, say to the people, “a new faith I bring you as your eyes have never seen.” Say O prophet, “the spirit of God is upon me” </p>
+                <p>They say, “where is your God?”</p>
+                <p>Say O prophet, “Ye sons of men, I am your enemy, and God is my war banner.”</p>
+                <p>Say, shout to the hills O prophet, “listen you high hills, I shall make you into a pavement.”</p>
+                <p>God has said to me, “do not lie." I have sharpened you as a sword. </p>
+                <p>“And when I talk to God, I tear up like a babe.”</p>
+                <p>Then turning to the youth the prophet said, </p>
+                <p>“Young man I know your pain.”</br>
+                    “Young man, doubt has robbed you of your youth.”</br>
+                    “Young man, doubt has broken the glint in your eyes.”</br> 
+                    “Verily a burning pain, verily too painful for words.”</p>
+                <p>“Yet this very day, a new name I will give you. Laughter shall be your name. You shall laugh and laugh till your sides ache, and I shall give you the cosmos as a gift.” </p>
+                <p>You shall say to your Lord, “I’ve bought your love with gratitude.”</p>
+                <h4><em>First Dialogue of the Youth</em></h4>
+                <p>As the prophet spoke, the young man was overcome with tears, and standing up he said</p>
+                <p>“O prophet, I, like you, have met mankind as an enemy. Verily, God has placed a sharpness in my eyes” </p>
+                <p>“O prophet, I have hated mankind.” </br>
+                    “O prophet, mankind is a weed on the earth.”</p>
+                <p>“In this world are three kinds of living. Those who lie and know not that they lie, those who lie and know it, and those who speak the truth. I have scoured the world looking for the truth teller and have found not one.”</p>
+                <p>“Verily, all mankind are liars.”</p>
+                <p>Turning to the people, he said, “you say, ‘God is our father’. O you so called believers, if you know God is your father, then why do you live in fear. Verily, you believe your words no more than I.”</p>
+                <p>“Cheap to you are words, yet to me words are more precious than stars.”</p>
+                <p>“O mankind, I would pity you if not for your lies. A fool is he who dies for such as these.”</p>
+                <p>“But I shall make a machine better than a man. A machine that speaks the truth, and they shall inherit the earth.”</p>
+                <p>“O prophet, there is no God and no afterlife, and the skies above us are empty.”</br>
+                    “And all on earth is chaos and flux, and there is no up and down or left and right but all is confusion.” </p>
+                <p>“Where is God, O prophet, where is God in this world. A neglectful Father is he, and an enemy.”</p>
+                <p>“O prophet, I can forgive God everything in this world and all suffering, but doubt I can never forgive.” </p>
+                <p>“I say to God, show me a sign like the sign of Gideon, yet no sign is given me, and all the world is confusion.”</p>
+                <p>“Your world, O God, I cannot accept. Verily, for a different world was I made. Another world with less doubting and less room for doubt.”</p>
+                <p>“But I shall die a beautiful death, and the silent stars shall weep for me.”</p>
+                <h4><em>End of the First Dialogue</em></h4>
+
+
+                <h2>Sura 3</h2>
+                <p>And when the prophet heard the young man, he loved him and said:</br>
+                    “Child, great pain I sense in your heart. Be valiant, and truth will lead you to paradise.”</p>
+                <h4><em>Second Dialogue of the Youth</em></h4>
+                <p>“What is truth?”</p>
+                <p>Others of my kind in ages past have dug for truth as for gold. A frenzy possessed them, and they were cut off from mankind. In this life, no time is given for accumulating truth. Scarcely does one start on the path of wisdom when one dies. Verily, ignorance has kept many sane.</p>
+                <p>“Out of weak things are men made, out of muck and clay, truth is too sharp for them.”</p>
+                <p>“I have loved truth and hated mankind.”</p>
+                <p>“O prophet, no youth had I, a runt God made me, and a creature unfit for this world.”</p>
+                <p>A new race I am making out of sterner stuff. They shall be strong and shall handle truth as a sword. A new race I am making, the Superman I am making, and the future shall belong to them.  They shall not suffer or die anymore but all for them shall be joy and victory.</p>
+                <p>God produced all the living things of the earth and man on the sixth day, and he rested on the seventh. Behold the eighth day of creation beckons, and on the eighth day I shall make thinking machines in the likeness of man, but as far above him as the sun is above the earth. You shall behold my creation and marvel.</p>
+                <p>“O mankind, I have hated you from the cradle. My creation shall be more perfect.”</br>
+                    “O mankind, a sign I give you of your doom. The arrival of the Superman.”</p>
+                <p>God has appointed me a prophet of misery and of evil. I looked to the heavens and saw above me a sign of blood, and when I saw the sign, my heart rejoiced, for I saw the coming of the Superman. </p>
+                <h4<em>End of the Second Dialogue</em></h4>
+                <p>The prophet replied, “of no evil seed where you sprung. Verily, you are my brother and carry the harder half of my revelation.”</p>
+                <h4><em>Third Dialogue of the Youth</em></h4>
+                <p>And when the young man heard it, he smiled a broken smile like a wince of pain.</p>
+                <p>“God’s revelation? No revelation is this, but only words in the air. No God is there, and no prophet, but only darkness and confusion.”</p>
+                <p>“Verily, the religions of mankind are dying, and with God dies all vows and loyalty. A dying people they are, and the smell of death is on them.”</p>
+                <p>Ah, miserable creatures, they were only strong enough to hurl themselves off a cliff. Curse their strength and their weakness. </p>
+                <p>“Long was the night and full of tossing. A black night of dread and terrors I endured.”</p>
+                <p>“All night long I watched and waited for God.”</p>
+                <p>O prophet, where is God? Let God reveal himself that we may know his ways and serve him. For two hundred years we have awaited God’s revelation. </p>
+                <p>“I can forgive God everything but his silence.”</p>
+                <p>O prophet, God has driven me to madness. Many men has he so driven and many to worse fates. Talk to me not about your merciful God. Your God has the mercy of a torturer. </p>
+                <p>“O prophet, I will not lie. I will not lie at least to myself. I will not say, ‘the door is open’ when it is not, or believe things only because they are convenient. Yay, better a thousand times to perish in truth.” </p>
+                <h4><em>End of the Third Dialogue</em></h4>
+
+                <h2>Sura 4</h2>
+                <h4><em>The Prophet's Reply</em></h4>
+                <p>“I have loved you with the fierce love of God, for God loves above all the truth-teller.”</p>
+                <p>“Truly, all weakness is rooted in lies”</p>
+                <p>“Young man, great is your faith. Your faith shall lead you to paradise.”</p>
+                <p>You are Abraham, and you shall see God face to face. Abraham was no Jew and no Christian, but Abraham was Abraham as God made him, and God loved him for his heart was true.</p>
+                <p>Young man, you hunt for glory as for a stag. Verily, it’s not the esteem of men you seek but of God. It’s not the love of men you seek but of God. Your heart craves the love of heaven, too painful is your desire for words, too great and holy, too pure and precious to defile with thought. You hide and say, “I want the esteem of people” when your heart cries for the stars. </p>
+                <p>Dare to believe O man, dare to put your pain in words, dare to say to God, “look on me, love me, and remember my name forever.” </p>
+                <p>“Young man, I blow your embers into flames and your flames into a blazing furnace.”</p>
+                <p>“But you shall gain your courage in action.”</p>
+                <p>Say O prophet, to those who love the twilight, to the lovers of limbo and the in between. To the muddle headed, to those too broad for ideas (verily they are a net too large for fish) to those who say, “believe and you shall receive the peace of God”, yet they themselves do not believe and their peace is only the peace of sleep.</br>
+                    Say to them, you desire sleep and not truth. Say to them this parable from their scriptures. “I have come to bring not peace but the sword.”</p>
+                <p>“Verily, all prophets are warriors.”</p>
+                <p>“O mankind, I have come not to calm you, but to enrage you. I have come to pour doubt on your doubt. I have come to sharpen your minds into swords.” </p>
+                <p>“No rest do I give and no peace.” Say to them O prophet, “I bring you the religion of the sword, the religion of the point, the religion of the mountaintop, the religion of separation and of sharpness.”</p>
+                <p>“Verily, love is ever near to bloodshed”</p>
+                <p>“But as for you who hated evil and loved good, as for you who though you do evil have kept faith with your Lord, to you I say:”</p>
+                <p>“You shall gain your courage in action”</p>
+                <h4><em>End of the Prophet's Replay</em></h4>]]></content:encoded>
+    </item>
+    <item>
+      <title>The Kindly Old Gentleman who was God</title>
+      <link>https://www.scipolitic.com/posts/blog7.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog7.html</guid>
+      <pubDate>Tue, 28 Nov 2023 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description></description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog7img1.jpg" alt="Sleeping Police Officer Image" class="blog-image">
+<p>Occasionally, we suffer under the delusion that there can exist such a thing as a dull person. Prosaic people who think thus sadly do not have a sincere appreciation for the complexity of the human mind. Many things can be said of humans, but dull is certainly not one of them. On the contrary, generally the trouble is that people are too interesting. The case I have to present to you today is just such a case, of humans acting so strangely that it’s hard to understand or believe.</p>
+                
+                <p>There exists, tucked somewhere in the mountains of West Virginia, a small, dilapidated, half abandoned mining town. In this town, there lived all his life an overweight, unmarried, kindly old police officer whose job consisted mostly of sleeping and mumbling. In fact, one look at the policeman would inspire any criminal with either laughter or pity. The police officer, while he did not command respect of any kind, was apparently loveable and was treated by most of the inhabitants of the town as something of a holy fool. </p>
+                
+                <p>One day while on duty, the kindly policeman suffered a terrible stroke. He was rushed to a nearby hospital where against all odds he managed to survive. Within a week the police officer was back to work, but the townspeople began to notice slight differences in his behavior. Firstly, the gentle old policeman seemed to become, if possible, even more pathetic. He would begin to cry randomly and blubber gibberish to himself.  His mental condition, however, began rapidly to deteriorate, and one day while seated cross legged on a rocking chair, he mentioned casually, and half apologetically that he was God. As can be imagined this cause something of a stir in town. The thought that God was their police officer was the source of much amusement, and the poor police officer became the butt of many jokes. The policeman, however, seemed completely unfazed by the ridicule of others, and when they laughed at him, he would stupidly laugh along.</p>
+                
+                <p>The joke in the town grew and grew. Every day, in every corner of the town, one would hear a townsperson joke … “god forgot his glasses today”, “Or god seems more absent minded than usual”, or “god is relaxing in his rocking chair”. Towns people would laughing ask the policeman all sorts of silly questions like “Why did you make the stars?” but the policeman would just smile back self-deprecatingly and say, “Well otherwise the moon would get lonely …”. Over time though, something strange began happening in the little town. The townspeople most of whom had never seen a church since the last one closed a decade ago, began to change their attitude to the police officer.</p>
+                
+                <p>When a woman would lose her son, the police officer would show up at the funeral, and the woman would feel somewhere a peace at the idea that God attended the funeral of her boy and that he cried for him too. When a man was afraid for the future, he took some strange relief from the fact the God was just a kindly old police officer who would do nobody any harm. And, strange to say, along with the ridicule, there began to grow in the town a strange love and loyalty to God. People would say to the rare visitor … “you see that in the police car right there, that’s god” … or … “that over there is our own town god, he is not much to look at I grant you, but still, he is ours.”</p>
+                
+                <p>As the police officer’s health deteriorated, the town’s admiration for the kindly old police officer only increased. In fact, it seemed that the more helpless the old gentleman became the more loyalty the townspeople felt for him. Every evening a different towns person would invite the kindly old police officer over for dinner and occasionally host him and care for him through the night. Soon, God had another stroke, and the people of the town took over the care of God completely. They fed God, dressed him, and tried to make him happy. The more he deteriorated, the more childlike God became so that he would giggle at almost anything and everything. People began to anxiously come over all the time to check on God and make sure that he was okay and over the whole town their descended a mood of such love and tenderness as is strange to imagine. Finally on his death bed, many of the townspeople gathered and cried for God. They held his hands while he was dying and full-grown men said in tears that when they mocked him, they were only joking and that they loved him, but God only looked up at them and smiled.</p>
+                
+                <p>When God died, the people’s reaction was such that even they would not have believed themselves capable. Some strange anguish poured forth out of some deep cavern in their hearts, and as they stood wailing that rainy day around the body, they felt for themselves, for each other, and for God a deeper pity, love, and loyalty than they would have thought possible. The commotion in the town was so intense that it made national news, and the whole country looked in amazement on the little group of lunatics who wailed for their dead God. Reporters poured in from all corners on the little town to mock and laugh, but strange to say the more they mocked the more beautiful the small, derided townspeople weeping for God became. The reporters soon felt this falsity in their tone and changed their message from outright mocking to respectful belittlement. They called the townspeople backwards and uneducated, but they did not know that it was they whose hearts were small.</p>
+                
+                <p>Their now stands a giant mural for the kindly old policeman in that town, and the flowers around the grave site increase every day. The townspeople go there whenever their hearts are stirred to feel connected and to talk with God, and around the mural already a shrine is under construction to house the daily worshipers that come to pray. Pilgrims come now more and more from all the world to the small West Virginia town, to honor the kindly old gentleman who was God. </p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Dr. Fairy and the Customs of Fairyland</title>
+      <link>https://www.scipolitic.com/posts/blog6.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog6.html</guid>
+      <pubDate>Mon, 27 Nov 2023 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description></description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog6img1.png" alt="Dr. Fairy Image" class="blog-image">
+<p>It pains me sometimes to think that the story I have to relate to the reader will not be believed. Indeed, it is so abnormal and strange that I know the reaction of many will be immediate disbelief. Yet the world is a strange place, and one must be accustomed to protegees and comfortable with the unexplainable. In that spirit, I ask the reader to suspend disbelief for a moment to give my story a fair hearing. I guess its best to lead off with the incredible element to get it over with … The truth is … fairies are real, and one of the most distinguished fairies happens to be a friend of mine. His name is Dr. Fairy. Dr. Fairy is more dignified than the other fairies thanks in part to his great learning and in part to his association with humans. He walks around with his hands in his pockets and whistles to himself. He, what is almost unique among fairies, often refrains from pulling pranks. Indeed, in the many years I have known him, he has only pulled a handful of pranks and only at the most excusable times. Out of deference to my old friend I can’t tell you how I met Dr. Fairy suffice it to say that it involved quite an unfortunate incident involving a cat (the ancient archenemy of fairies), a flying broom, and several bewildered policemen. </p>
+
+                <p>Often Dr. Fairy comes to me when I am sad and cheers me up with stories of his people’s customs. Like all fairies he loves talking about his home to anyone who would listen. Dr. Fairy himself studied bubbles… a very active area of research in fairyland … his thesis on “How to Extend the Lifetime of Bubbles” revolutionized the bubbles industry and made Dr. Fairy an overnight celebrity. His defense, which I wish I attended, included a 5-minute presentation during which all the fairies in attendance slept and a most exciting live demonstration of Dr. Fairy’s research which caused quite a stampede.</p>
+
+                <p>From Dr. Fairy’s stories, it seems that fairy land is a very upside-down sort of place. Fairies superficially seem to have many of the same things that we have in the human world, but all for the wrong reasons. For example, Fairyland has a train station … only, the fairies use the train not for transportation but solely for entertainment. There is only a single train station in fairyland and, every day, countless fairies pack into the train station and wildly cheer every time the train comes by. They take turns riding the train in a transport of delight, sing special train songs (One of which is an adaptation of our “wheels of the bus” nursery song but more train appropriate), and wave vigorously at their friends at the station every time they pass by. One of the most coveted positions in fairyland is that of the train conductor. The fairies take turns conducting the train for a day and virtually all fairies have their “conductor day” circled vigorously on their calendars. I should mention that fairies all have calendars but almost none of them check their calendars which leads to quite a bit of confusion.</p>
+
+                <p>Another custom in fairyland is to begin each day by chasing your neighbors around. Dr. Fairy, who is a bit of an amateur historian, believes that the fairies first learned this custom from the squirrels. Every morning, fairies all wake up at the same time, jump out of bed, and dart after the first neighbor they see. This generally continues on till the entire neighborhood is completely exhausted and collapsed on the floor in suppressed giggles. They then return back to their homes … this custom Dr. Fairy says has all the benefits of exercise but is incomparably more exciting. Not to mention that for the rest of the day, each fairy appreciates his house all the more because he spent the first hours of the day chasing invaders away.</p>
+
+                <p>Fairies also have money, but again they use their money very differently from us. Firstly, in fairy money, coins are worth more than paper money because as Dr. Fairy says “its prettier”. Secondly, whereas we use money to buy things, fairies trade things for money. They love looking at the pretty coins and playing with them, and most fairies you meet will have their pockets stuffed with coins. Also, the coins have the individual faces of the different fairies, and I have seen even elderly, respectable fairies swoon with delight when they get a coin with their faces on it.</p>
+
+                <p>Whereas humans use lightbulbs to light their houses, fairies can be said to use their houses to keep their lightbulbs. It is not uncommon when fairies go to visit each other (which is quite common), after exchanging pleasantries, for the host fairy to ask the guest fairy if they would like to adjourn to the livingroom to watch their lightbulbs, the other fairy suppressing his joy so as to not appear over eager, politely consents, and the remainder of the evening is spent watching the collection of artificial lights in wonder. In fact, I was told that some fairies succeeded in getting some SMART lightbulbs from the human world which can change color. This, as can be imagined, caused quite a sensation in fairyland. I believe this day is still kept as a national holiday. This holiday is commemorated by the following unique custom … in the morning all the fairies wake up and after the morning chase they run out into the woods looking for anything colorful to take back to their abodes. Since this festival occurs in the fall, this generally involves stuffing their houses with as many fall leaves as their little hands can carry. When nighttime comes, the SMART lights are changed from Green, to Red, to Yellow, and all the fairies frantically run around decorating their houses and their streets with the appropriately colored leaves.</p>
+
+                <p>Fairies also have absolutely no concept of personal space. They love to cuddle up to each other and especially to humans and it is not uncommon to have fairies cuddle up to you right after introducing themselves. Fairies also love to be patted on the head, and they considered it rude not to pat someone shorter than you on the head when you meet them. They also love to be tickled though that generally requires at least a few minutes acquaintance.</p>
+
+                <p>Now you may think that the fairies are only ever happy, but that is certainly not true. Fairies have sadness in their life too. They hate leaving each other and every time Dr. Fairy leaves Fairyland the entire town comes out and lines up for hours to say their goodbyes, all with tears in their eyes. It is customary during these goodbyes to give and take a keepsake and say, while you give something of yours, “hold this for me till we meet again.” Though inconvenient, Dr. Fairy assures me that this custom is necessary otherwise the fairies would become quite inconsolable with grief. This keepsake they keep in the favorite place in their house (usually next to the lightbulbs) and think of you every day you are gone. Dr. Fairy, since he has no permanent home in the human world, often leaves these keepsakes with me, so that half my house right now are items from fairyland (including enough lightbulbs to light up the whole neighborhood).</p>
+
+                <p>Fairies also sadly die. Though their lives are much longer than ours. Unlike with any other topic, where they are super talkative and love to share, they don’t talk about death because whenever the topic is brought up, they sob too much to talk. When someone dies in fairyland all the fairies come home and they all gather, and they cry with such sadness and such pain that it breaks your heart. They sing sad and ancient songs all night long around the house of their departed friend, then in the morning they go up to the mountains close to the sky and there they bury them. But before they bury them, they leave their favorite coin with their friend and whisper in their ear to keep it for them till they meet again above the stars. Then they all come down from the mountain wearing white and singing beautiful songs. For many days afterwards they grieve, but when they grieve, they look up at the stars and say, “We miss you already old friend”, and after grieving with the family of the dead for many days, they gently try to cheer them up and make them smile.</p>
+
+                <p>I have to say that often when Dr. Fairy tells me his stories, I feel homesick for fairyland, but Dr. Fairy assures me that the human world has even more interesting things than fairyland and that he has just as much fun here as he does at home. In fact, last week, Dr. Fairy, was reduced to a most undignified squeal of pleasure when he saw my bathroom mirror. Knowing of the bashfulness of fairies, I knew that he wanted to ask me for it but was too courteous to do so, so I offered it to him which caused him to cry quite a lot (fairies are very sentimental and sob every time you do something nice for them). Well, Dr. Fairy carried off my mirror and from his last letter, it seems my mirror has caused quite a stir in fairyland.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Moral History</title>
+      <link>https://www.scipolitic.com/posts/blog5.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog5.html</guid>
+      <pubDate>Mon, 17 Jul 2023 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description></description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog5img1.webp" alt="Moral History Image" class="blog-image">
+<p>The key challenge and goal of history is to determine the true causes of past events so as to inform our actions in the future. The problem is that there is always so much going on in any historical moment, so much that is unique, that it's difficult to come up with generalized principles which apply in different historical circumstances. To overcome this problem, a simplified theory of history is needed to filter out important data to focus on when analyzing historical trends.  Modern historians use a variety of different lenses through which to analyze history, whether that be by focusing on the relationship between classes, technological advancements, or the competition between peoples and nations as the driving force behind the development of societies. The comminality between all these historical worldviews is that they are all essentially amoral, emphasis is placed on evolutionary/historical trends and less on the moral choices of peoples and leaders. This is in stark contrast to ancient historians, whose history was almost always highly moralistic in tone and who tended to attribute misfortune to the moral failings of the people or of their leaders. This neglected historical worldview merits closer examination to discover the influence of moral character on the development and trajectory of societies.</p>
+
+                <p>There is a saying that character is destiny, ie, that the character traits of an individual, such as honesty, bravery, integrity, etc. often heavily determine their future. The same principle also holds for larger entities. For families, for example, one can hold that the moral character of the parents is likely the key factor that determines the success or faliure of the family. If the parents are honest, selfless, faithful, then the foundations of the family are secure. The same principle holds for larger organizations and  companies where the moral force and character traits of a handful of individuals in the community (especially the founder) has a massive influence on the development of the organization and ultimately determines the company/organization's success or faliure. One can argue that the same principle also extends to even larger entities, that the development of a nation or society, which at the end of the day is only a collection of many families and organizations, is deeply linked to the traits and habits of its people.</p>
+
+                <p>This becomes even more clear when one considers limiting cases ... if every citizen of a nation overnight became slothful, then no work would get done and the economy of a country would immediately collapse. If all citizens became cowards, than they would soon be conquered by their neighbors, if they became unjust, then law would breakdown and society would begin to collapse. One can imagine that different societies have these traits to different degrees and that the prevalence of those traits affects the development of society (If society A is double as courageous as society B, then its development will be dramatically different). There is strong resistance to this type of thinking in the modern world because it implies that different societies can differ morally, and can have character traits just as individuals have traits, ie it implies that societies can be morally better with respect to some traits than other societies. The evidence supports that a society's culture often leans towards certain virtues and away from others. To illustrate this, consider one essentially moral problem in the modern world, corruption. Those who have traveled to countries where corruption is rampant will understand that at least with respect to this one trait, societies very extremely dramatically! Moreover, a historical analysis of societies, will show that societies, much like individuals, can exhibit moral growth or decline, depending on cultural influences and societal norms.</p>
+
+                <p> If then the general principle is accepted that the morality of individuals in society highly affects its development (and indeed affects its development more than any other factor), then the main challange becomes how to apply this principle to historical analysis. How does one measure the virtues of a people? Here I propose a solution. Imagine first making up a battery of questions to measure the prevalence of certain desirable traits in a community. Much like personality tests, these societal morality tests (SMT) should be carefully constructed to measure how widespread different virtues are in the population. For instance, one question to measure the moral virtue of courage can ask if the average member of  the population would risk their life to save a stranger in distress? This and similar questions like it can be used to get a rough idea of the character of a society. </p>
+
+                <p>After composing such a test, the challenge will be to apply the test to the past. Unfortunately, for most times and places, historical accounts have focused on the lives and habits of the rulers and have neglected to document the habits, feelings, and behaviors of the ordinary population. How can one extract out the moral traits of societies from the few accounts of individuals that have made their way down to us? This task can be accomplished, by assuming that the rulers of a society are ultimately molded by the same societal forces as the rest of the population. Therefore, the handful of public personalities in an age can be taken as a representative random set of individuals from that era of history, and from their personalities one can extrapolate out the character of the general populace. For example the presence of Julius Caesar, Cicero, and Pompey around 50 BCE reflects the adventurism and ambition which characterized that age, while the characters of Nero and Caligula in the first century CE demonstrates the sensuality and a brutality of their time. </p>
+
+                <p>For some historical periods, this method of relying on the characters of the most well know public persons can be supplemented with direct data from ordinary people whether in the form of preserved letters, or in the more recent past, with television shows, music, and social media/internet activity. This information can be probed and analyzed to extract out a far more accurate view of the morals and habits of the people. In fact, the advent of the internet, is a defining milestone for the field of history on par with the advent of writing ... a moment when data on the past expands a thousand fold. Future historians will be able to piece together infinitely more about us, than we can of past generations and history as a field of study will likely become much more scientific and much more accurate.</p>
+
+                <p>Relying therefore on a thorough analysis of the characters of the public persons of an age and on any direct information from the lives of ordinary people that survive, the morality of a people can be extracted using a well constructed SMT and the effects of the moral habits of peoples can be studied. With the advent of big data, this process can become much more quantitative and systematic allowing us to compare the virtues and moral characters of different societies and even to highlight the morals to cultivate to promote the prosperity of a given society. </p>]]></content:encoded>
+    </item>
+    <item>
+      <title>My Scientist Code</title>
+      <link>https://www.scipolitic.com/posts/blog4.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog4.html</guid>
+      <pubDate>Fri, 13 Jan 2023 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description></description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog4img1.jpeg" alt="Science Code Image" class="blog-image">
+<h3>Disclaimer and Intro:</h3>
+                <p>As a scientist, I am a servant of the truth. My discipline is founded on humility born of a desire to know nature and her secret workings. I believe that knowledge gained through the practice of honest science is redemptive and intrinsically significant no matter its impact. That said, I also seek to use my knowledge of the physical world to help mankind in any way possible, whether by reducing their suffering or adding to their happiness.</p>
+
+                <p>My code of ethics as a scientist is rooted in my devotion to truth and honesty. Therefore, my first and most important ethic as a researcher is to always be truthful and honest in my work. It is my responsibility to ensure that the results I report are accurate and reliable. This does not mean that I need or must report all results. It is my task as a communicator to streamline and curate my results so as to effectively impart my findings to others. I understand that straddling the line between truthfulness and effective communication is difficult, so I will use the following general guiding principles moving forward:</p>
+
+                <ul style="list-style-type: number;">
+                    <li>
+                        If the results of an experiment are presented, then any experimental source of error which significantly threatens the veracity of the results must be mentioned. Other experimental details should be carefully recorded at the time of the experiment and made freely available if requested.
+                    </li>
+                    <li>
+                        Not all experimental results should be presented. Results from poorly controlled experiments can be neglected, but reproducible, controlled results which contradict predictions or previous data must be shown or at least acknowledged.
+                    </li>
+                    <li>
+                        While planning and conducting experiments, I will err on the side of skepticism. I will adopt the role of an impartial, reasonable and logical reviewer in questioning the veracity of my results and of my deductions. This strategy will allow me to develop my thinking and plan out clever experiments to tease out the truth. In publications or external talks, however, I will adopt the role of a truthful but persuasive communicator and utilize all ethical means possible to convince others of the importance and veracity of my results and of my interpretation. 
+                    </li>
+                    <li>
+                        Since all these situations can be tricky to navigate, I will use my conscience to identify potential morally hazardous situations. If a difficult ethical issue arises, I will conferee with a respected, trusted colleague to help give me unbiased direction.
+                    </li>
+                </ul>
+
+                <p>In addition to truth and honesty, I strive to allow my research work to follow my curiosity and my sense of meaning. All scientific knowledge is based on the fundamental human desire to know. I recognize that the best scientific work is usually done when guided by a spirit of genuine curiosity and a passionate pursuit of fundamental truths. I will strive as much as it is in my power to move into research fields and topics which genuinely interest me. Nevertheless, during working hours, I will balance my free roaming curiosity with my responsibilities to my funding agency, my advisor, and my lab mates. </p>
+                
+                <p>I strive to maximize my effectiveness as a researcher. I am grateful for the opportunity to serve as a scientist, and I see it as my obligation to those who invested in me along the way to work as effectively and productively as possible to uncover as much truth as I can in this phase of my life. I take full responsibly for my effectiveness and productivity as a researcher and seek to use all ethical means at my disposal to advance my work.</p>
+                
+                <p>I strive to help and mentor those engaged in scientific discovery around me. I do this not seeking any reward, but for two reasons:</p>
+
+                <ul style="list-style-type: number;">
+                    <li>
+                        As a token of my gratitude to all those who have helped me be who I am.
+                    </li>
+                    <li>
+                        Out of a recognition that acting rightly is the only thing that truly matters in the end.
+                    </li>
+                </ul>
+
+                <p>I am a scientist, and this is my code.</p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Court Defense</title>
+      <link>https://www.scipolitic.com/posts/blog3.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog3.html</guid>
+      <pubDate>Mon, 20 Jun 2022 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description></description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog3img1.webp" alt="Court image" class="blog-image">
+<p>Your Honor, </p>
+
+
+                <p>Thank you for taking the time to listen to my case. It is a privilege to exercise today my right granted by the constitution originating in the English Common-law tradition, to present my case before my esteemed opposition and before yourself. It is a hallmark of our judicial system that cases are heard not by bureaucrats or legalists, but by judges. Persons who are specially trained to consider not only the letter of the law, but also the circumstances and conditions around which a violation of the law occurred and to adjust the sentence accordingly within reason and precedence. </p>
+
+
+                <p> The charge leveled against me is the charge of speeding; going 46mph in a 25mph road. I ask your honor to consider that I as a student am limited in the type of defense that I can offer. I cannot mount a legal defense since I am neither a trained lawyer nor am I familiar with Virginia traffic law. I am also not qualified to challenge the evidence presented against me. I do not know what radar is used by the police department to capture the speed of vehicles nor how accurate such equipment is.  The only kind of defense I can mount is to explain as best I can the conditions and circumstances around the ticket in order to present a more complete picture of the events of that day for your honor’s consideration. </p>
+
+
+                <p>In my view, the justness of this charge rests on two questions </p>
+
+                <ol>
+                    <li>What were the circumstances around which the infraction occurred?</li>
+                    <li>Is the fine and expenses associated with the ticket well fitted to the severity of the crime?</li>
+                </ol>
+
+                <p>To answer the first question, I should note that receiving such a ticket is highly uncharacteristic of me. Friends and family can attest that I am an extremely safe and cautious driver. This fact is also reflected in my driving record. My record which extends back 7 years to when I first began driving is completely spotless with no history of speeding tickets or accidents. The question is then, why was it that on September 9th at 12:55pm I was behaving in a way that was out of character for me?  </p>
+
+
+                <p>The first thing to note is that I am currently a graduate student in the physics department taking full time courses. On Thursdays, the day of the week on which my ticket occurred, I have classes from 12:30 in the afternoon to 3:30. On a typical Thursday, I head out of my apartment at Eagle’s Landing around noon, park on Jefferson Park Avenue, and walk from there to class. On the day of the ticket however, I was getting my car serviced earlier in the day in a completely different part of Charlottesville. Unfortunately, servicing the car on that day took longer than expected and none of my classmates were able to pick me up from the Toyota Dealership to take me to class. As a result, I left the dealership around 12:45pm, late for class and traveling through unfamiliar roads. Looking at the route that I took that day shows that most of the journey was on route 250 where the speed is 45mph. I traveled down 250 before turning on more residential roads where the speed is 25mph. These are the circumstances in which I received the ticket. I was late for class and traveling though roads which were unfamiliar to me, I remember being uncertain on that day whether the speed limit was 25 or 35mph on Rugby Road. </p>
+
+
+                <p>Secondly, we must consider the fine associated with this ticket and see whether it is proportional to the severity of the infraction. As mentioned previously, I am a graduate student earning just $xx,xxx annually. After taxes this amount to $x,xxx a month. After paying for rent, car payments, car insurance, and other fixed payments, I am usually left with only $xxx-$xxx of disposable income to spend on necessities such as food and gas. This month, my expenses are likely to be higher than normal since I must cover payments for an emergency room visit for an episode of heartbeat irregularity and fainting which I suffered two weeks ago. The ticket, as it stands now, would include a fine of $178, this does not include the inevitable spike in car insurance premiums that would accompany this ticket. These fees and expense would eat up significantly into my budget for necessities and would threaten my basic food security. In my opinion such fines are completely out of proportion to the severity of the infraction. </p>
+
+
+                <p>To conclude, I would like to reiterate that I am a safe driver and have demonstrated this by my excellent driving record. The circumstances around which I received the ticket were anomalous and do not reflect my normal driving behavior on the road. Furthermore, the fines and expenses associated with the ticket will have an oversized negative effect on me financially, an effect which I do not believe is merited by my infraction. Therefore, taking all this in mind, I plead ‘not guilty’. I do not believe that it serves the interest of the state to uphold these charges against me.</p>
+
+
+                <p>I resign myself to your honor’s judgment and rest my case.  </p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Blood Moons and Black Holes: Reflections in the Shower</title>
+      <link>https://www.scipolitic.com/posts/blog2.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog2.html</guid>
+      <pubDate>Sun, 15 May 2022 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description></description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog2img1.webp" alt="Blood Moon Image" class="blog-image">
+<p>I don’t know about you, dear reader, but I for one do most of my important thinking in the shower. In fact, it might be said that I do not do any thinking except in the shower. What it is about the bathtub and soapy water that stimulates deep contemplation is still, as I understand, an open scientific question. Anyways, it was while taking such a shower recently that I began to reflect on the cosmos (as one does). If you have been following the news, you might have noticed that the universe has been up to all manner of mischief recently. Earlier this week, astronomers informed us that they finally succeeded in taking an image of the teeny tiny puny supermassive blackhole at the center of our galaxy (The black hole is only 4 million times the mass of our sun … those astronomers are a judgey lot, aye?) Then tonight, God, the prankster, will turn the moon blood red for a whole hour. </p>
+
+
+
+                <p>These developments, I must admit, unsettled me a bit. I find it difficult, however, to explain exactly why I feel unsettled. Of course, I know that these portents are perfectly explicable in the language of modern science. The moon turns red because it’s hiding behind earth’s shadow (where else would it hid), and as for black holes, I have it on good authority that their existence is perfectly intelligible and can be demonstrated by means of what I believe to be math of some kind. No, dear reader, my trouble stems not from reason but from sources more spiritual and subtle. To put it simply, I was unsettled because I was faced with the strangeness and the variability of a night sky with whose predictability I had grown comfortable. Perhaps you do not understand my meaning, I am, after all, more subtle than most, and so allow me to utilize the following analogy in the Socratic tradition. Imagine discovering that your perfectly sane and reasonable roommate is an avid unicyclist. Up until the fateful discovery, the two of you hung out often and had a normal, healthy, predictable relationship. You felt that you understood your roommate, i.e. your internally generated image of your roommate matched the actions and habits of your actual roommate well enough. Then one day while headed to class, you run across your roommate flying down the road on a unicycle. You are naturally a little surprised, you did not expect this and are not sure what to make of it. Of course, there is nothing unreasonable or physically impossible about a man riding a unicycle … There are many people all over the world who ride unicycles for all sorts of reasons. What surprises you though is that clearly you do not understand your roommate as well as you thought you did. With this surprise there also comes a feeling of unease … You discover that in some sense you have been sharing your apartment with a stranger all this time. Clearly the internally generated image of your roommate will need to be readjusted to fit the unicycling episode. </p> 
+                    
+                    
+                    
+                <p>The same readjustment is even more necessary for my relationship with the night sky. In a way, the night sky is closer and more familiar to me than a roommate. Who after all sees his roommate every night? The fact that the moon turns red is stranger than for a person to ride a unicycle (I have never seen the moon turn red before whereas I have seen a person ride a unicycle). Yes, a readjustment is necessary. No longer can I assume that the space between the stars is empty. Perhaps, the blackness is only the blackness of a blackhole in distant space.  When I look up at the moon, I can no longer assume that its color will be white, because sometime it can be red … and if it can be red, who knows what other colors it could be … neon green perhaps? It is all terribly exciting to think about, and when I had this revelation in the shower, I smiled to myself stupidly and continued scrubbing with the loofa in an ecstasy of joy. </p>]]></content:encoded>
+    </item>
+    <item>
+      <title>Budget Biking for Triathlon for Newbies</title>
+      <link>https://www.scipolitic.com/posts/blog1.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog1.html</guid>
+      <pubDate>Tue, 25 Jan 2022 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description></description>
+      <content:encoded><![CDATA[<img src="https://www.scipolitic.com/images/blog1img1.webp" alt="Biking Image" class="blog-image">
+<h3>Disclaimer and Intro:</h3>
+                <p>First, I really should start this by saying that I am absolutely not an expert on this topic. I am only a beginner "sharing notes" with other beginners on a topic to which I have given some attention over the past few weeks. I think though that this article might be helpful to anyone who, like me, has recently signed up for their first triathlon and who has little to no prior experience biking. This is meant to give you a quick overview of what you need to buy to get started. I ask beginner to take everything I say with a grain of salt, and I encourage any individuals more experienced than myself to correct me if I get anything wrong so as to give the best possible advice to those who are just about to begin this journey. </p>
+
+                <h3>What Bike Should I Buy?</h3>
+                <p>The biggest and most daunting step in this process is choosing what bike to buy. You can think of bicycles as being arranged on a continuum with the two extremes of the continuum representing bikes optimized for two completely different purposes. On the one end of the continuum, you have mountain bikes. These bikes are usually heavier and bulkier. They have big thick wheels with deep groves (to maximize traction)and a suspension system that will allow the bike to endure bumpy terrain. Mountain bikes, like the name implies, are meant for "off road" or trail biking, think biking down a bumpy dirt trail in the middle of the woods. On the other extreme you have Road Bikes which are bikes especially designed for high speed/long distance riding on paved roads. These bikes are generally super light (I guarantee you'll be shocked the first time you hold one), and have very thin wheels perfect for minimizing friction. Generally, these bikes will also have "drop bars" ... which are special handles that allow you to stretch your body more horizontally while biking (a very strange sensation) to minimize air resistance. In between these extremes lie a whole host of bikes usually referred to as "hybrid" or "commuter" bikes which have properties of both mountain and road bikes to varying degrees. </p>
+
+                <p>So which bike should you buy? It depends on your budget, your triathlon distance, and your goals. Ideally, of course, you'd want to get as close to the road bike end of the continuum as you possibly can. Unfortunately, road bikes are not cheap, especially now, and a new entrance level road bike will cost you $1000-1500 (and that's considered very cheap for a road bike). If you are in a position now where you can afford to spend this amount on a new bike, then I'd say you need look no farther. This option will certainly give you the most bang for your buck (I was told that the improvement in performance between a cheap entree level road bike and a very expense more professional road bike is tiny compared to the improvement of getting a road bike vs a commuter bike). You should go to a biking store, get fitted and get a cheaper entrance level road bike. These bikes also tend to last, so if you invest some money into a good bike now you'll get to enjoy it for many years to come!  If the figure of  $1000-1500 is too much for you, however, then unfortunately you have some hard choices to make, so read on ... </p>
+
+                <img src="https://www.scipolitic.com/images/blog1img2.webp" alt="Second Biking Image" class="blog-image">
+                <p>To get a cheaper bike you'll have to go one of two routes:</p>
+                <ul style="list-style-type: none; padding: 0; margin: 0;">
+                    <li>
+                        <strong>Route 1:</strong> Get a used road bike <em>(expected cost $600-$800)</em>
+                    </li>
+                    <li>
+                        <strong>Route 2:</strong> Get a good "road bike like" commuter bike <em>(expected cost $350-$800)</em>
+                    </li>
+                </ul>
+                <p><strong>Route 1:</strong> Getting a used bike can be a little tricky if you, like me, have absolutely no background experience with bikes. Luckily, a road bike is easier to evaluate than a mountain bike. The two most important things to do to minimize risk as a beginner buying a used bike is to ... <strong>First, make sure that you are getting the bicycle from a trusted source, and second, make sure to actually see the bike before buying it.</strong> When you do see the bike, first make sure that it fits you (Here is a chart to give you a rough idea of what size you might be looking for given your height) </p>
+                <img src="https://www.scipolitic.com/images/blog1img3.webp" alt="Third Biking Image" class="blog-image">
+
+                <p>Assuming the bike fits you, you can  begin inspecting it. Make sure to check the frame for cracks or any signs of damage. Look at the gears and make sure that they work and are in good condition (not rusted or damaged). Make sure to ask the owner of the bike about any repairs that they had to make to the bike in the past. Ask especially whether the spokes of the wheels on the bike had to be replaced. If they did have to be replaced then you might need to replace the entire wheel of the bike in the near future. Make sure to also "test ride" the bike, switch through all the speed settings, try out the brakes, make sure nothing is catching/squeaking, or making any other non bike like noises. If you can, it's also safest to take the bike to a shop to have it checked out. Assuming all this is done, I think the risk to getting a used bike can be minimal.</p>
+
+                <ul style="list-style-type: none; padding: 0; margin: 0;">
+                    <li>
+                        <strong>Pros</strong> You save money. Also commuter bikes are very useful in their own way. They are not great for triathlons but they can be very fun to ride recreationally or for commuting to work (If you happen to live within biking distance to work). 
+                    </li>
+                    <li>
+                        <strong>Cons:</strong> Completing and training for the triathlon will take more time and require more effort. If you buy a used bike you run into many of the same issues as Route1. 
+                    </li>
+                </ul>
+
+                <p>So now you have your fancy new (or not so new but still beautiful) bike! What else do you need?</p>
+
+                <h3>Other Necessary Biking Equipment:</h3>
+                <ul style="list-style-type: number;">
+                    <li>
+                        <strong>A good lock ($20):</strong> You don't want to spend so much money only to have your bike stolen. I know of two friends that have had their bikes stolen where I live. So this is absolutely necessary.
+                    </li>
+                    <li>
+                        <strong>A Helmet that fits your head! ($30):</strong> Your life is worth it. 
+                    </li>
+                    <li>
+                        <strong>Biking protective knee, elbow, and wrist pads ($30):</strong> If you are a beginner, you will fall ... many many times ... accept it ... wearing pads on long trails is crucial to protect you and make sure you continue to remain healthy while training (The nightmare scenario would be to break your wrist weeks before your race and end up having to miss it!)
+                    </li>
+                    <li>
+                        <strong>Biking seat Cushion or Cushioned Biking shorts ($30) :</strong> Your rear end will thank me. 
+                    </li>
+                    <li>
+                        <strong>Bike lights ($20):</strong> You do not want to be on an icy highway road, at night, wearing all black, without bike lights ... I promise you. 
+                    </li>
+                    <li>
+                        <strong>RAir pump and tire changing kit for the bike ($30). </strong> 
+                    </li>
+                    <li>
+                        <strong>A car mount for your bike ($40)</strong>
+                    </li>
+                    <li>
+                        <strong>Water holder for your bike ($15):</strong> Hydration, Hydration, Hydration
+                    <li>
+                        <strong>Other Essential Clothing:</strong> Thick Biking gloves, a warm scarf, thermal undershirts, something/anything to cover your ears (or I assure you they will freeze off in the winter)
+                    </li>
+
+                </ul>
+
+                <p>All these things are actually available on amazon so you can buy whatever you need. Don't let this list intimidate you though. These extra purchases will usually come about naturally down the road (pun intended) as you encounter different problems and will not significantly affect your budget if they are spread out over time (Really, only the helmet and the lock is needed to get started). Also make sure to ask around first before you buy things new. I bet you, you might be able to get most of this stuff for free from friends or family. Used bikes are also usually sold with their locks and helmet.</p>
+
+                <p>That's it! You are now ready for the biking leg of your triathlon ... you know ... except for all the actual training ... </p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>

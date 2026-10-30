@@ -34,6 +34,7 @@ Site copy is public. Use only facts Ephraiem has made public. Never add private 
    - Closing back link
 2. Add a corresponding entry row in `writings.html` (newest posts go at the top of the table)
 3. Place any images in `images/` using the `blog[N]img[M].[ext]` naming convention
+4. Regenerate the RSS feed with `python3 tools/build_feed.py .` and commit `feed.xml` (the only generated file; it feeds Substack's importer)
 
 ## Styling Conventions
 

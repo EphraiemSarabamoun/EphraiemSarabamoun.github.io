@@ -16,7 +16,7 @@ Push to `main` branch deploys automatically via GitHub Pages. No build step, CI/
 - **`writings.html`** is the blog listing page, a table layout where highlighted rows use `bgcolor="#ffffd0"`.
 - **`papers.html`** lists his papers, newest first, one table row per paper (title link, authors, venue and year, short summary).
 - **`projects.html`** lists his projects, newest first, one table row per project (title link, date, short description, then a row of GitHub, demo or dataset links).
-- **`posts/blog[N].html`** holds the blog posts, blog1 to blog21. There is no blog13, because it was renamed to blog14 to bust a cache.
+- **`posts/blog[N].html`** holds the blog posts, blog1 to blog22. There is no blog13, because it was renamed to blog14 to bust a cache.
 - **`styles.css`** is the single stylesheet for the entire site (Lato font via Google Fonts).
 - **`images/`** holds all image assets, named `blog[N]img[M].[ext]` plus `profilepic.jpg`.
 - **`Human.md`** explains the site in plain words for people reading the repo.

@@ -6,7 +6,35 @@
     <atom:link href="https://www.scipolitic.com/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Essays by Ephraiem Sarabamoun.</description>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Nov 2026 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 12:00:00 +0000</lastBuildDate>
+    <item>
+      <title>A Research Agenda Outline for Building Loyal AI</title>
+      <link>https://www.scipolitic.com/posts/blog23.html</link>
+      <guid isPermaLink="true">https://www.scipolitic.com/posts/blog23.html</guid>
+      <pubDate>Fri, 06 Nov 2026 12:00:00 +0000</pubDate>
+      <dc:creator>Ephraiem Sarabamoun</dc:creator>
+      <description>In my previous posts, I discussed and attempted to define AI loyalty as a distinct trait of AI agents and explored its relationship to other existing fields of AI safety.</description>
+      <content:encoded><![CDATA[<h3>Overview</h3>
+                <p>In my <a href="https://www.lesswrong.com/w/ai-loyalty" rel="noreferrer">previous posts</a>, I discussed and attempted to define AI loyalty as a distinct trait of AI agents and explored its relationship to other existing fields of AI safety. In this post, I aim to expand on that discussion and outline a proposed research road map toward AI alignment through the development of loyal AIs.</p>
+                <p>At the outset, it is important be recognize that research into AI loyalty is inherently dual use and therefore must be pursued responsibly. With that in mind, I propose dividing this research agenda into a primary and a secondary line of investigation. The primary research direction would focus on investigating whether loyalty in AI agents is effective in counteracting loss of control risks. This would require work on developing methods to measure and strengthen AI loyalty, as well as, experiments to evaluate whether increasing the loyalty of AI agents reduces loss of control risks. The secondary research direction would experiment with strategies and governance structures that would reduce the concentration of power risks inherent in building loyal AIs.</p>
+                <h3>Primary Track</h3>
+                <p>The central premise of this research agenda hinges on two hypotheses:<br>
+                1. Loyalty is easier to build into AI agents than general alignment.<br>
+                2. AI loyalty reduces the risk of loss of control.</p>
+                <p>If either of these hypotheses are false, then this research agenda should be abandoned in favor of more promising research directions</p>
+                <p>For this research agenda, we will first seek to show that loyalty can be used to reduce loss of control risks. This will involve, building evals to assess model loyalty, building environments to assess loss of control, and building techniques for increasing the loyalty of models.</p>
+                <h4>Evaluating Loyalty</h4>
+                <p>The first step to making progress on this agenda is to put together evals that fully encapsulate our definition of loyalty in AIs and which will serve as targets for training. In our <a href="https://www.lesswrong.com/posts/77QEhHYeE6RbLqRnc/can-you-trust-your-ai-agent-a-case-for-ai-loyalty" rel="noreferrer">previous post</a> we distinguished between different loyalty classes to distinguish between professed loyalty, behavioral loyalty, and internalized loyalty. Evals should be designed for each one of those classes. This would allow us to compare the effectiveness of different training techniques at eliciting different forms of loyalty, as well as assess how well these improvements generalize beyond the training environments.</p>
+                <h4>Building/Collecting Environments for Assessing Loss of Control</h4>
+                <p>Our second task will be to compile or develop environments for evaluating loss of control risks in AI agents. There are already a number of environments and benchmarks developed for AI control research that could serve as useful starting points. Rather than building everything ourselves, we should begin by investigating which existing environments can be adapted to our purposes.</p>
+                <p>These control environments should expose our agents to situations in which they have  the opportunity to act against the interests of their principal. Ideally, we would like a diversity of scenarios to test for different forms of misalignment such as reward hacking, unauthorized actions, attempts to circumvent oversight, and other forms of behavior aimed at undermining the principle's control. The central objective would be to establish a reliable experimental setup in which we could compare agents with different measured levels of loyalty and determine whether increasing loyalty mitigates loss of control.</p>
+                <h4>Increasing Loyalty in Models</h4>
+                <p>Our third task will be to investigate techniques for increasing the loyalty of AI agents. We can explore both black-box techniques applicable to closed source models and white box techniques that require access to a model's weights. The former could include prompt engineering and other forms of in-context conditioning, while the latter could involve supervised fine-tuning, reinforcement learning, and character or persona training.</p>
+                <p>If increasing loyalty consistently reduces loss of control risks across may environments, than this would provide evidence in favor of the second hypothesis listed above.</p>
+                <h3>Secondary Track</h3>
+                <p>If we are able to demonstrate that loyalty mitigates loss of control risks in AI models, we must also investigate how to mitigate the concentration of power risks associated with building highly loyal AIs. This secondary track would focus on exploring technical safeguards and governance structures that could prevent loyal AI systems from being used by individuals or institutions to consolidate power. We plan to explore this research direction in greater detail if the initial results from the primary track prove promising.</p>
+                <p class="blog-meta">This post also appears on <a href="https://www.lesswrong.com/posts/rpTo8YPmWLZeBooKD/a-research-agenda-outline-for-building-loyal-ai">LessWrong</a>.</p>]]></content:encoded>
+    </item>
     <item>
       <title>The Midterms and AI Development</title>
       <link>https://www.scipolitic.com/posts/blog22.html</link>
